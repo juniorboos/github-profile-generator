@@ -5,29 +5,36 @@ interface InputData {
   emoji: string;
 }
 
-const useInputHandler = (initialState: InputData) => {
+interface InputHandlerProps {
+  inputList: InputData[];
+  isEmojisShown: null | number;
+  handleInputAdd: () => void;
+  handleInputChange: (e: ChangeEvent<HTMLInputElement>, idx: number) => void;
+  handleEmojiChange: (emoji: string, idx: number) => void;
+  handleInputRemove: (idx: number) => void;
+  handleShowEmojis: (idx: number) => void;
+}
+
+const useInputHandler = (initialState: InputData): InputHandlerProps => {
   const [inputList, setInputList] = useState([initialState]);
   const [isEmojisShown, setIsEmojisShown] = useState<null | number>(null);
 
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement>,
-    index: number
-  ) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
     const { value } = e.target;
     const list = [...inputList];
-    list[index].text = value;
+    list[idx].text = value;
     setInputList(list);
   };
 
-  const handleEmojiChange = (emoji: string, index: number) => {
+  const handleEmojiChange = (emoji: string, idx: number) => {
     const list = [...inputList];
-    list[index].emoji = emoji;
+    list[idx].emoji = emoji;
     setInputList(list);
   };
 
-  const handleInputRemove = (index: number) => {
+  const handleInputRemove = (idx: number) => {
     const list = [...inputList];
-    list.splice(index, 1);
+    list.splice(idx, 1);
     setInputList(list);
   };
 
@@ -51,3 +58,4 @@ const useInputHandler = (initialState: InputData) => {
 };
 
 export { useInputHandler };
+export type { InputHandlerProps };
