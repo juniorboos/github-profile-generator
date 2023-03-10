@@ -58,4 +58,4 @@ const useInputHandler = (initialState: InputData): InputHandlerProps => {
 };
 
 export { useInputHandler };
-export type { InputHandlerProps };
+export type { InputHandlerProps, InputData };

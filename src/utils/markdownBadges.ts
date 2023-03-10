@@ -1,9 +1,9 @@
-export type BadgesProps = {
+export type OptionsProps = {
   label: string;
   value: string;
 };
 
-export const markdownBadges: BadgesProps[] = [
+export const markdownBadges: OptionsProps[] = [
   {
     label: "Amazon Alexa",
     value:

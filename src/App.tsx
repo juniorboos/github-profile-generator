@@ -1,12 +1,12 @@
-import { FormEvent, useState } from "react";
-import { Box, ThemeProvider, FormControl, IconButton } from "@primer/react";
+import { useState } from "react";
+import { Box, ThemeProvider } from "@primer/react";
 import { useInputHandler } from "./hooks/useInputHandler";
-import { BadgesProps, markdownBadges } from "./utils/markdownBadges";
-import Select, { MultiValue } from "react-select";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { BiCopy } from "@react-icons/all-files/bi/BiCopy";
+import { OptionsProps, markdownBadges } from "./utils/markdownBadges";
+import { MultiValue } from "react-select";
 import { AboutMe } from "./components/AboutMe";
+import { getMarkdown } from "./utils/getMarkdown";
+import { TechStack } from "./components/TechStack";
+import { MarkdownPreview } from "./components/MarkdownPreview";
 
 function App() {
   const { inputList, ...inputHandlers } = useInputHandler({
@@ -14,31 +14,18 @@ function App() {
     emoji: "😃",
   });
 
-  const [selectedBadges, setSelectedBadges] = useState<MultiValue<BadgesProps>>(
+  const [selectedTechs, setSelectedTechs] = useState<MultiValue<OptionsProps>>(
     []
   );
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+  const markdown = getMarkdown(inputList, selectedTechs);
 
-  const markdownContent = `# Hello there 👋
-# About Me
-${inputList.map((singleInput) => `- ${singleInput.emoji} ${singleInput.text}`)
-  .join(`
-`)}
-# Tech Stack
-${selectedBadges.map((badge) => `${badge.value} `).join("")}
-`;
-
-  const copyToClipboard = () => navigator.clipboard.writeText(markdownContent);
+  const copyToClipboard = () => navigator.clipboard.writeText(markdown);
 
   return (
     <ThemeProvider>
       <Box sx={{ display: "flex", minHeight: "100vh" }}>
         <Box
-          as="form"
-          onSubmit={handleSubmit}
           sx={{
             padding: "2rem",
             display: "flex",
@@ -49,36 +36,13 @@ ${selectedBadges.map((badge) => `${badge.value} `).join("")}
           }}
         >
           <AboutMe inputList={inputList} {...inputHandlers} />
-          <FormControl>
-            <FormControl.Label>Tech Stack</FormControl.Label>
-            <Select
-              isMulti
-              name="markdown-badges"
-              options={markdownBadges}
-              styles={{ container: (base) => ({ ...base, width: 500 }) }}
-              value={selectedBadges}
-              onChange={(badges) => setSelectedBadges(badges)}
-            />
-          </FormControl>
-        </Box>
-        <Box
-          sx={{
-            width: "50%",
-            padding: "2rem",
-            position: "relative",
-          }}
-        >
-          <IconButton
-            aria-label="Copy"
-            icon={BiCopy}
-            sx={{ position: "absolute", top: 2, right: 2 }}
-            onClick={() => copyToClipboard()}
-          />
-          <ReactMarkdown
-            children={markdownContent}
-            remarkPlugins={[remarkGfm]}
+          <TechStack
+            selectedTechs={selectedTechs}
+            onChangeTechs={(badges) => setSelectedTechs(badges)}
+            techOptions={markdownBadges}
           />
         </Box>
+        <MarkdownPreview onCopy={() => copyToClipboard()} markdown={markdown} />
       </Box>
     </ThemeProvider>
   );

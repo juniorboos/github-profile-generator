@@ -1,6 +1,8 @@
 import { Box, FormControl, Button, TextInput } from "@primer/react";
-import EmojiPicker from "emoji-picker-react";
 import { InputHandlerProps } from "../hooks/useInputHandler";
+import { EmojiPicker } from "./EmojiPicker";
+import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
+import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
 
 const AboutMe = ({
   inputList,
@@ -12,42 +14,40 @@ const AboutMe = ({
   handleShowEmojis,
 }: InputHandlerProps) => {
   return (
-    <Box>
+    <FormControl>
+      <FormControl.Label>Description</FormControl.Label>
       {inputList.map((singleInput, idx) => (
-        <FormControl key={idx}>
-          <FormControl.Label>Description</FormControl.Label>
-          <Box display="flex" sx={{ gap: "0.5rem", marginBottom: "1rem" }}>
-            <Box sx={{ position: "relative" }}>
-              <Button onClick={() => handleShowEmojis(idx)}>
-                {singleInput.emoji}
-              </Button>
-              {isEmojisShown === idx && (
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: "100%",
-                    left: 0,
-                    zIndex: 2,
-                  }}
-                >
-                  <EmojiPicker
-                    onEmojiClick={(e) => handleEmojiChange(e.emoji, idx)}
-                  />
-                </Box>
-              )}
-            </Box>
-            <TextInput
-              placeholder="Text"
-              value={singleInput.text}
-              onChange={(e) => handleInputChange(e, idx)}
-            />
-
-            <Button onClick={() => handleInputRemove(idx)}>Remove</Button>
-          </Box>
-        </FormControl>
+        <Box display="flex" sx={{ gap: "0.5rem", width: "100%" }}>
+          <EmojiPicker
+            current={singleInput.emoji}
+            isOpen={isEmojisShown === idx}
+            onBtnClick={() => handleShowEmojis(idx)}
+            onClickOutside={() => handleShowEmojis(-1)}
+            handleEmojiUpdate={(e) => handleEmojiChange(e.emoji, idx)}
+          />
+          <TextInput
+            placeholder="Text"
+            value={singleInput.text}
+            onChange={(e) => handleInputChange(e, idx)}
+            sx={{ flexGrow: 1 }}
+          />
+          <Button
+            onClick={() => handleInputRemove(idx)}
+            leadingIcon={MdRemoveCircleOutline}
+            variant="danger"
+          >
+            Remove
+          </Button>
+        </Box>
       ))}
-      <Button onClick={() => handleInputAdd()}>Add more</Button>
-    </Box>
+      <Button
+        onClick={() => handleInputAdd()}
+        leadingIcon={MdAddCircleOutline}
+        variant="outline"
+      >
+        Add more
+      </Button>
+    </FormControl>
   );
 };
 
