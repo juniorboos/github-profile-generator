@@ -15,9 +15,16 @@ const AboutMe = ({
 }: InputHandlerProps) => {
   return (
     <FormControl>
-      <FormControl.Label>Description</FormControl.Label>
+      <FormControl.Label>About Me</FormControl.Label>
       {inputList.map((singleInput, idx) => (
-        <Box display="flex" sx={{ gap: "0.5rem", width: "100%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
           <EmojiPicker
             current={singleInput.emoji}
             isOpen={isEmojisShown === idx}
@@ -29,7 +36,7 @@ const AboutMe = ({
             placeholder="Text"
             value={singleInput.text}
             onChange={(e) => handleInputChange(e, idx)}
-            sx={{ flexGrow: 1 }}
+            block
           />
           <Button
             onClick={() => handleInputRemove(idx)}
