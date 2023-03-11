@@ -1,14 +1,17 @@
 import { MultiValue } from "react-select";
+import { SocialMediaProps } from "../components/ContactMe";
 import { AboutMeInputProps } from "../hooks/useAboutMeHandler";
 import { OptionsProps } from "./markdownBadges";
 
 type AboutMe = AboutMeInputProps[];
 type TechStack = MultiValue<OptionsProps>;
+type ContactMe = SocialMediaProps[];
 
 export const getMarkdown = (
   aboutMe: AboutMe,
   techStack: TechStack,
-  githubUser: string
+  githubUser: string,
+  contactMeInputs: ContactMe
 ) => `# Hello there 👋
 # About Me
 ${aboutMe.map((singleInput) => `- ${singleInput.emoji} ${singleInput.text}`)
@@ -39,4 +42,8 @@ ${
     </table>`
     : ``
 }
+# Contact Me
+${contactMeInputs
+  .map((social) => `[${social.socialMedia?.value}](${social.url})`)
+  .join("")}
 `;

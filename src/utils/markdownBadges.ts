@@ -3,6 +3,189 @@ export type OptionsProps = {
   value: string;
 };
 
+export const socialMedias: OptionsProps[] = [
+  {
+    label: "Discord",
+    value:
+      "![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)",
+  },
+  {
+    label: "Facebook",
+    value:
+      "![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)",
+  },
+  {
+    label: "Gmail",
+    value:
+      "![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)",
+  },
+  {
+    label: "Goodreads",
+    value:
+      "![Goodreads](https://img.shields.io/badge/Goodreads-F3F1EA?style=for-the-badge&logo=goodreads&logoColor=372213)",
+  },
+  {
+    label: "Google Meet",
+    value:
+      "![Google Meet](https://img.shields.io/badge/Google%20Meet-00897B?style=for-the-badge&logo=google-meet&logoColor=white)",
+  },
+  {
+    label: "Instagram",
+    value:
+      "![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)",
+  },
+  {
+    label: "KakaoTalk",
+    value:
+      "![KakaoTalk](https://img.shields.io/badge/kakaotalk-ffcd00.svg?style=for-the-badge&logo=kakaotalk&logoColor=000000)",
+  },
+  {
+    label: "Line",
+    value:
+      "![Line](https://img.shields.io/badge/Line-00C300?style=for-the-badge&logo=line&logoColor=white)",
+  },
+  {
+    label: "LinkedIn",
+    value:
+      "![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)",
+  },
+  {
+    label: "Linktree",
+    value:
+      "![Linktree](https://img.shields.io/badge/linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white)",
+  },
+  {
+    label: "Meetup",
+    value:
+      "![Meetup](https://img.shields.io/badge/Meetup-f64363?style=for-the-badge&logo=meetup&logoColor=white)",
+  },
+  {
+    label: "Messenger",
+    value:
+      "![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)",
+  },
+  {
+    label: "Mastodon",
+    value:
+      "![Mastodon](https://img.shields.io/badge/-MASTODON-%232B90D9?style=for-the-badge&logo=mastodon&logoColor=white)",
+  },
+  {
+    label: "Outlook",
+    value:
+      "![Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)",
+  },
+  {
+    label: "Odysee",
+    value:
+      "![Odysee](https://img.shields.io/badge/odysee-EF1970?style=for-the-badge&logo=Odysee&logoColor=white)",
+  },
+  {
+    label: "Pinterest",
+    value:
+      "![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)",
+  },
+  {
+    label: "Protonmail",
+    value:
+      "![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)",
+  },
+  {
+    label: "Polywork",
+    value:
+      "![Polywork](https://img.shields.io/badge/Polywork-543DE0?style=for-the-badge&logo=polywork&logoColor=black)",
+  },
+  {
+    label: "Signal",
+    value:
+      "![Signal](https://img.shields.io/badge/Signal-%23039BE5.svg?style=for-the-badge&logo=Signal&logoColor=white)",
+  },
+  {
+    label: "Skype",
+    value:
+      "![Skype](https://img.shields.io/badge/Skype-%2300AFF0.svg?style=for-the-badge&logo=Skype&logoColor=white)",
+  },
+  {
+    label: "Slack",
+    value:
+      "![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)",
+  },
+  {
+    label: "Snapchat",
+    value:
+      "![Snapchat](https://img.shields.io/badge/Snapchat-%23FFFC00.svg?style=for-the-badge&logo=Snapchat&logoColor=white)",
+  },
+  {
+    label: "TeamSpeak",
+    value:
+      "![TeamSpeak](https://img.shields.io/badge/TeamSpeak-2580C3?style=for-the-badge&logo=teamspeak&logoColor=white)",
+  },
+  {
+    label: "Telegram",
+    value:
+      "![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)",
+  },
+  {
+    label: "Tencent QQ",
+    value:
+      "![Tencent QQ](https://img.shields.io/badge/Tencent%23QQ-%2312B7F5?style=for-the-badge&logo=tencentqq&logoColor=white)",
+  },
+  {
+    label: "TikTok",
+    value:
+      "![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)",
+  },
+  {
+    label: "Tumblr",
+    value:
+      "![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)",
+  },
+  {
+    label: "Tutanota",
+    value:
+      "![Tutanota](https://img.shields.io/badge/Tutanota-840010?style=for-the-badge&logo=Tutanota&logoColor=white)",
+  },
+  {
+    label: "Twitch",
+    value:
+      "![Twitch](https://img.shields.io/badge/Twitch-9347FF?style=for-the-badge&logo=twitch&logoColor=white)",
+  },
+  {
+    label: "Twitter",
+    value:
+      "![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)",
+  },
+  {
+    label: "Viber",
+    value:
+      "![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)",
+  },
+  {
+    label: "WeChat",
+    value:
+      "![WeChat](https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&logo=wechat&logoColor=white)",
+  },
+  {
+    label: "WhatsApp",
+    value:
+      "![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)",
+  },
+  {
+    label: "Wire",
+    value:
+      "![Wire](https://img.shields.io/badge/Wire-B71C1C?style=for-the-badge&logo=wire&logoColor=white)",
+  },
+  {
+    label: "XING",
+    value:
+      "![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)",
+  },
+  {
+    label: "YouTube",
+    value:
+      "![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)",
+  },
+];
+
 export const markdownBadges: OptionsProps[] = [
   {
     label: "Amazon Alexa",
@@ -2485,186 +2668,6 @@ export const markdownBadges: OptionsProps[] = [
       "![Airtable](https://img.shields.io/badge/Airtable-18BFFF?style=for-the-badge&logo=Airtable&logoColor=white)",
   },
   {
-    label: "Discord",
-    value:
-      "![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)",
-  },
-  {
-    label: "Facebook",
-    value:
-      "![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)",
-  },
-  {
-    label: "Gmail",
-    value:
-      "![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)",
-  },
-  {
-    label: "Goodreads",
-    value:
-      "![Goodreads](https://img.shields.io/badge/Goodreads-F3F1EA?style=for-the-badge&logo=goodreads&logoColor=372213)",
-  },
-  {
-    label: "Google Meet",
-    value:
-      "![Google Meet](https://img.shields.io/badge/Google%20Meet-00897B?style=for-the-badge&logo=google-meet&logoColor=white)",
-  },
-  {
-    label: "Instagram",
-    value:
-      "![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)",
-  },
-  {
-    label: "KakaoTalk",
-    value:
-      "![KakaoTalk](https://img.shields.io/badge/kakaotalk-ffcd00.svg?style=for-the-badge&logo=kakaotalk&logoColor=000000)",
-  },
-  {
-    label: "Line",
-    value:
-      "![Line](https://img.shields.io/badge/Line-00C300?style=for-the-badge&logo=line&logoColor=white)",
-  },
-  {
-    label: "LinkedIn",
-    value:
-      "![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)",
-  },
-  {
-    label: "Linktree",
-    value:
-      "![Linktree](https://img.shields.io/badge/linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white)",
-  },
-  {
-    label: "Meetup",
-    value:
-      "![Meetup](https://img.shields.io/badge/Meetup-f64363?style=for-the-badge&logo=meetup&logoColor=white)",
-  },
-  {
-    label: "Messenger",
-    value:
-      "![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)",
-  },
-  {
-    label: "Mastodon",
-    value:
-      "![Mastodon](https://img.shields.io/badge/-MASTODON-%232B90D9?style=for-the-badge&logo=mastodon&logoColor=white)",
-  },
-  {
-    label: "Outlook",
-    value:
-      "![Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)",
-  },
-  {
-    label: "Odysee",
-    value:
-      "![Odysee](https://img.shields.io/badge/odysee-EF1970?style=for-the-badge&logo=Odysee&logoColor=white)",
-  },
-  {
-    label: "Pinterest",
-    value:
-      "![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)",
-  },
-  {
-    label: "Protonmail",
-    value:
-      "![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)",
-  },
-  {
-    label: "Polywork",
-    value:
-      "![Polywork](https://img.shields.io/badge/Polywork-543DE0?style=for-the-badge&logo=polywork&logoColor=black)",
-  },
-  {
-    label: "Signal",
-    value:
-      "![Signal](https://img.shields.io/badge/Signal-%23039BE5.svg?style=for-the-badge&logo=Signal&logoColor=white)",
-  },
-  {
-    label: "Skype",
-    value:
-      "![Skype](https://img.shields.io/badge/Skype-%2300AFF0.svg?style=for-the-badge&logo=Skype&logoColor=white)",
-  },
-  {
-    label: "Slack",
-    value:
-      "![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)",
-  },
-  {
-    label: "Snapchat",
-    value:
-      "![Snapchat](https://img.shields.io/badge/Snapchat-%23FFFC00.svg?style=for-the-badge&logo=Snapchat&logoColor=white)",
-  },
-  {
-    label: "TeamSpeak",
-    value:
-      "![TeamSpeak](https://img.shields.io/badge/TeamSpeak-2580C3?style=for-the-badge&logo=teamspeak&logoColor=white)",
-  },
-  {
-    label: "Telegram",
-    value:
-      "![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)",
-  },
-  {
-    label: "Tencent QQ",
-    value:
-      "![Tencent QQ](https://img.shields.io/badge/Tencent%23QQ-%2312B7F5?style=for-the-badge&logo=tencentqq&logoColor=white)",
-  },
-  {
-    label: "TikTok",
-    value:
-      "![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)",
-  },
-  {
-    label: "Tumblr",
-    value:
-      "![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)",
-  },
-  {
-    label: "Tutanota",
-    value:
-      "![Tutanota](https://img.shields.io/badge/Tutanota-840010?style=for-the-badge&logo=Tutanota&logoColor=white)",
-  },
-  {
-    label: "Twitch",
-    value:
-      "![Twitch](https://img.shields.io/badge/Twitch-9347FF?style=for-the-badge&logo=twitch&logoColor=white)",
-  },
-  {
-    label: "Twitter",
-    value:
-      "![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)",
-  },
-  {
-    label: "Viber",
-    value:
-      "![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)",
-  },
-  {
-    label: "WeChat",
-    value:
-      "![WeChat](https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&logo=wechat&logoColor=white)",
-  },
-  {
-    label: "WhatsApp",
-    value:
-      "![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)",
-  },
-  {
-    label: "Wire",
-    value:
-      "![Wire](https://img.shields.io/badge/Wire-B71C1C?style=for-the-badge&logo=wire&logoColor=white)",
-  },
-  {
-    label: "XING",
-    value:
-      "![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)",
-  },
-  {
-    label: "YouTube",
-    value:
-      "![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)",
-  },
-  {
     label: "Zoom",
     value:
       "![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)",
@@ -2904,4 +2907,5 @@ export const markdownBadges: OptionsProps[] = [
     value:
       "![Upwork](https://img.shields.io/badge/UpWork-6FDA44?style=for-the-badge&logo=Upwork&logoColor=white)",
   },
+  ...socialMedias,
 ];

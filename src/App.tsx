@@ -7,11 +7,16 @@ import { getMarkdown } from "./utils/getMarkdown";
 import { TechStack } from "./components/TechStack";
 import { MarkdownPreview } from "./components/MarkdownPreview";
 import { GithubStats } from "./components/GithubStats";
-import { ContactMe } from "./components/ContactMe";
+import {
+  ContactMe,
+  SocialMediaProps,
+  SOCIAL_INITIAL_STATE,
+} from "./components/ContactMe";
 import { useAboutMeHandler } from "./hooks/useAboutMeHandler";
+import { useInputHandler } from "./hooks/useInputHandler";
 
 function App() {
-  const { inputs, ...inputHandlers } = useAboutMeHandler({
+  const { inputs: aboutMeInputs, ...aboutMeInputHandlers } = useAboutMeHandler({
     text: "",
     emoji: "😃",
   });
@@ -22,7 +27,18 @@ function App() {
 
   const [githubUser, setGithubUser] = useState<string>("");
 
-  const markdown = getMarkdown(inputs, selectedTechs, githubUser);
+  const { inputs: contactMeInputs, ...contactMeInputHandlers } =
+    useInputHandler<SocialMediaProps>({
+      url: "",
+      socialMedia: SOCIAL_INITIAL_STATE,
+    });
+
+  const markdown = getMarkdown(
+    aboutMeInputs,
+    selectedTechs,
+    githubUser,
+    contactMeInputs
+  );
 
   const copyToClipboard = () => navigator.clipboard.writeText(markdown);
 
@@ -31,7 +47,7 @@ function App() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "30% auto",
+          gridTemplateColumns: "500px auto",
           minHeight: "100vh",
         }}
       >
@@ -44,7 +60,7 @@ function App() {
             borderRight: "1px solid gray",
           }}
         >
-          <AboutMe inputs={inputs} {...inputHandlers} />
+          <AboutMe inputs={aboutMeInputs} {...aboutMeInputHandlers} />
           <TechStack
             selectedTechs={selectedTechs}
             onChangeTechs={(badges) => setSelectedTechs(badges)}
@@ -54,7 +70,7 @@ function App() {
             value={githubUser}
             onChange={(e) => setGithubUser(e.target.value)}
           />
-          <ContactMe />
+          <ContactMe inputs={contactMeInputs} {...contactMeInputHandlers} />
         </Box>
         <MarkdownPreview onCopy={() => copyToClipboard()} markdown={markdown} />
       </Box>

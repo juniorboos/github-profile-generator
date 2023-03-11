@@ -1,4 +1,4 @@
-import { Box, FormControl, Button, TextInput } from "@primer/react";
+import { Box, FormControl, Button, TextInput, IconButton } from "@primer/react";
 import { EmojiPicker } from "./EmojiPicker";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
@@ -20,7 +20,6 @@ const AboutMe = ({
           sx={{
             display: "flex",
             width: "100%",
-            alignItems: "center",
             gap: "0.5rem",
           }}
           key={idx}
@@ -36,15 +35,15 @@ const AboutMe = ({
             placeholder="Text"
             value={singleInput.text}
             onChange={(e) => handleInputChange(e.target.value, idx, "text")}
-            block
+            sx={{ flexGrow: 1 }}
           />
-          <Button
+          <IconButton
+            aria-label="Remove"
             onClick={() => handleInputRemove(idx)}
-            leadingIcon={MdRemoveCircleOutline}
+            icon={MdRemoveCircleOutline}
             variant="danger"
-          >
-            Remove
-          </Button>
+            sx={{ height: "auto" }}
+          />
         </Box>
       ))}
       <Button

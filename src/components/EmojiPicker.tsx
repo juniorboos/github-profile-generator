@@ -30,8 +30,10 @@ const EmojiPicker = ({
   }, [ref]);
 
   return (
-    <Box sx={{ position: "relative" }}>
-      <Button onClick={onBtnClick}>{current}</Button>
+    <Box sx={{ position: "relative", height: "auto" }}>
+      <Button onClick={onBtnClick} sx={{ height: "100%" }}>
+        {current}
+      </Button>
       {isOpen && (
         <Box
           sx={{
