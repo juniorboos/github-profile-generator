@@ -7,11 +7,7 @@ import { getMarkdown } from "./utils/getMarkdown";
 import { TechStack } from "./components/TechStack";
 import { MarkdownPreview } from "./components/MarkdownPreview";
 import { GithubStats } from "./components/GithubStats";
-import {
-  ContactMe,
-  SocialMediaProps,
-  SOCIAL_INITIAL_STATE,
-} from "./components/ContactMe";
+import { ContactMe, SocialMediaProps } from "./components/ContactMe";
 import { useAboutMeHandler } from "./hooks/useAboutMeHandler";
 import { useInputHandler } from "./hooks/useInputHandler";
 
@@ -28,10 +24,7 @@ function App() {
   const [githubUser, setGithubUser] = useState<string>("");
 
   const { inputs: contactMeInputs, ...contactMeInputHandlers } =
-    useInputHandler<SocialMediaProps>({
-      url: "",
-      socialMedia: SOCIAL_INITIAL_STATE,
-    });
+    useInputHandler<SocialMediaProps>({ url: "" });
 
   const markdown = getMarkdown(
     aboutMeInputs,

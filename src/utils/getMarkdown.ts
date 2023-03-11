@@ -14,8 +14,10 @@ export const getMarkdown = (
   contactMeInputs: ContactMe
 ) => `# Hello there 👋
 # About Me
-${aboutMe.map((singleInput) => `- ${singleInput.emoji} ${singleInput.text}`)
-  .join(`
+${aboutMe.map(
+  (singleInput) =>
+    singleInput.text && `- ${singleInput.emoji} ${singleInput.text}`
+).join(`
 `)}
 # Tech Stack
 ${techStack.map((badge) => `${badge.value} `).join("")}
@@ -44,6 +46,9 @@ ${
 }
 # Contact Me
 ${contactMeInputs
-  .map((social) => `[${social.socialMedia?.value}](${social.url})`)
+  .map(
+    (social) =>
+      social.socialMedia && `[${social.socialMedia?.value}](${social.url})`
+  )
   .join("")}
 `;

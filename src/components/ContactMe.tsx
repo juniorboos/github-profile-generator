@@ -7,10 +7,8 @@ import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleO
 
 interface SocialMediaProps {
   url: string;
-  socialMedia: SingleValue<OptionsProps>;
+  socialMedia?: SingleValue<OptionsProps>;
 }
-
-const SOCIAL_INITIAL_STATE = { label: "", value: "" };
 
 const ContactMe = ({
   inputs,
@@ -34,6 +32,7 @@ const ContactMe = ({
             styles={{ container: (base) => ({ ...base, width: 180 }) }}
             value={singleInput.socialMedia}
             onChange={(e) => handleInputChange(e, idx, "socialMedia")}
+            placeholder="Select social"
           />
           <IconButton
             aria-label="Remove"
@@ -55,5 +54,5 @@ const ContactMe = ({
   );
 };
 
-export { ContactMe, SOCIAL_INITIAL_STATE };
+export { ContactMe };
 export type { SocialMediaProps };

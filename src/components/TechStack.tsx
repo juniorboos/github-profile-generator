@@ -18,6 +18,7 @@ const TechStack = ({
       <FormControl.Label>Tech Stack</FormControl.Label>
       <Select
         isMulti
+        placeholder="Choose your techs"
         name="markdown-badges"
         options={techOptions}
         styles={{ container: (base) => ({ ...base, width: "100%" }) }}
