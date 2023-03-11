@@ -7,6 +7,7 @@ import { AboutMe } from "./components/AboutMe";
 import { getMarkdown } from "./utils/getMarkdown";
 import { TechStack } from "./components/TechStack";
 import { MarkdownPreview } from "./components/MarkdownPreview";
+import { GithubStats } from "./components/GithubStats";
 
 function App() {
   const { inputList, ...inputHandlers } = useInputHandler({
@@ -18,13 +19,21 @@ function App() {
     []
   );
 
-  const markdown = getMarkdown(inputList, selectedTechs);
+  const [githubUser, setGithubUser] = useState<string>("");
+
+  const markdown = getMarkdown(inputList, selectedTechs, githubUser);
 
   const copyToClipboard = () => navigator.clipboard.writeText(markdown);
 
   return (
     <ThemeProvider>
-      <Box sx={{ display: "flex", minHeight: "100vh" }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "30% auto",
+          minHeight: "100vh",
+        }}
+      >
         <Box
           sx={{
             padding: "2rem",
@@ -32,7 +41,6 @@ function App() {
             flexDirection: "column",
             gap: "1rem",
             borderRight: "1px solid gray",
-            width: "50%",
           }}
         >
           <AboutMe inputList={inputList} {...inputHandlers} />
@@ -40,6 +48,10 @@ function App() {
             selectedTechs={selectedTechs}
             onChangeTechs={(badges) => setSelectedTechs(badges)}
             techOptions={markdownBadges}
+          />
+          <GithubStats
+            value={githubUser}
+            onChange={(e) => setGithubUser(e.target.value)}
           />
         </Box>
         <MarkdownPreview onCopy={() => copyToClipboard()} markdown={markdown} />

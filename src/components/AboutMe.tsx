@@ -24,6 +24,7 @@ const AboutMe = ({
             alignItems: "center",
             gap: "0.5rem",
           }}
+          key={idx}
         >
           <EmojiPicker
             current={singleInput.emoji}
