@@ -30,7 +30,7 @@ const EmojiPicker = ({
   }, [ref]);
 
   return (
-    <Box sx={{ position: "relative" }} ref={ref}>
+    <Box sx={{ position: "relative" }}>
       <Button onClick={onBtnClick}>{current}</Button>
       {isOpen && (
         <Box
@@ -40,6 +40,7 @@ const EmojiPicker = ({
             left: 0,
             zIndex: 2,
           }}
+          ref={ref}
         >
           <EmojiPickerReact onEmojiClick={handleEmojiUpdate} />
         </Box>

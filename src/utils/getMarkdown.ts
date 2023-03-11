@@ -1,9 +1,8 @@
 import { MultiValue } from "react-select";
-import src from "react-select/dist/declarations/src";
-import { InputData } from "../hooks/useInputHandler";
+import { AboutMeInputProps } from "../hooks/useAboutMeHandler";
 import { OptionsProps } from "./markdownBadges";
 
-type AboutMe = InputData[];
+type AboutMe = AboutMeInputProps[];
 type TechStack = MultiValue<OptionsProps>;
 
 export const getMarkdown = (

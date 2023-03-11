@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Box, ThemeProvider } from "@primer/react";
-import { useInputHandler } from "./hooks/useInputHandler";
 import { OptionsProps, markdownBadges } from "./utils/markdownBadges";
 import { MultiValue } from "react-select";
 import { AboutMe } from "./components/AboutMe";
@@ -8,9 +7,11 @@ import { getMarkdown } from "./utils/getMarkdown";
 import { TechStack } from "./components/TechStack";
 import { MarkdownPreview } from "./components/MarkdownPreview";
 import { GithubStats } from "./components/GithubStats";
+import { ContactMe } from "./components/ContactMe";
+import { useAboutMeHandler } from "./hooks/useAboutMeHandler";
 
 function App() {
-  const { inputList, ...inputHandlers } = useInputHandler({
+  const { inputs, ...inputHandlers } = useAboutMeHandler({
     text: "",
     emoji: "😃",
   });
@@ -21,7 +22,7 @@ function App() {
 
   const [githubUser, setGithubUser] = useState<string>("");
 
-  const markdown = getMarkdown(inputList, selectedTechs, githubUser);
+  const markdown = getMarkdown(inputs, selectedTechs, githubUser);
 
   const copyToClipboard = () => navigator.clipboard.writeText(markdown);
 
@@ -43,7 +44,7 @@ function App() {
             borderRight: "1px solid gray",
           }}
         >
-          <AboutMe inputList={inputList} {...inputHandlers} />
+          <AboutMe inputs={inputs} {...inputHandlers} />
           <TechStack
             selectedTechs={selectedTechs}
             onChangeTechs={(badges) => setSelectedTechs(badges)}
@@ -53,6 +54,7 @@ function App() {
             value={githubUser}
             onChange={(e) => setGithubUser(e.target.value)}
           />
+          <ContactMe />
         </Box>
         <MarkdownPreview onCopy={() => copyToClipboard()} markdown={markdown} />
       </Box>

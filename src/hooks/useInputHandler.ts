@@ -1,61 +1,37 @@
-import { useState, ChangeEvent } from "react";
+import { useState } from "react";
 
-interface InputData {
-  text: string;
-  emoji: string;
-}
-
-interface InputHandlerProps {
-  inputList: InputData[];
-  isEmojisShown: null | number;
+interface InputHandlerProps<T> {
+  inputs: T[];
   handleInputAdd: () => void;
-  handleInputChange: (e: ChangeEvent<HTMLInputElement>, idx: number) => void;
-  handleEmojiChange: (emoji: string, idx: number) => void;
+  handleInputChange: (value: string, idx: number, field: keyof T) => void;
   handleInputRemove: (idx: number) => void;
-  handleShowEmojis: (idx: number) => void;
 }
 
-const useInputHandler = (initialState: InputData): InputHandlerProps => {
-  const [inputList, setInputList] = useState([initialState]);
-  const [isEmojisShown, setIsEmojisShown] = useState<null | number>(null);
+const useInputHandler = <T>(initialState: T): InputHandlerProps<T> => {
+  const [inputs, setInputs] = useState([initialState]);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
-    const { value } = e.target;
-    const list = [...inputList];
-    list[idx].text = value;
-    setInputList(list);
-  };
-
-  const handleEmojiChange = (emoji: string, idx: number) => {
-    const list = [...inputList];
-    list[idx].emoji = emoji;
-    setInputList(list);
+  const handleInputChange = (value: string, idx: number, field: keyof T) => {
+    const list: T[] = [...inputs];
+    list[idx][field] = value as T[keyof T];
+    setInputs(list);
   };
 
   const handleInputRemove = (idx: number) => {
-    const list = [...inputList];
+    const list = [...inputs];
     list.splice(idx, 1);
-    setInputList(list);
+    setInputs(list);
   };
 
   const handleInputAdd = () =>
-    setInputList((prevInputList) => [...prevInputList, initialState]);
-
-  const handleShowEmojis = (idx: number) => {
-    if (idx === isEmojisShown) setIsEmojisShown(null);
-    else setIsEmojisShown(idx);
-  };
+    setInputs((prevInputs) => [...prevInputs, initialState]);
 
   return {
-    inputList,
-    isEmojisShown,
+    inputs,
     handleInputAdd,
     handleInputChange,
-    handleEmojiChange,
     handleInputRemove,
-    handleShowEmojis,
   };
 };
 
 export { useInputHandler };
-export type { InputHandlerProps, InputData };
+export type { InputHandlerProps };
