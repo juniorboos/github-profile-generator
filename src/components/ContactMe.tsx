@@ -20,12 +20,12 @@ const ContactMe = ({
     <FormControl>
       <FormControl.Label>Social Medias</FormControl.Label>
       {inputs.map((singleInput, idx) => (
-        <Box sx={{ display: "flex", width: "100%", gap: "0.5rem" }}>
+        <Box className="flex w-full gap-2">
           <TextInput
             placeholder="http://..."
             value={singleInput.url}
             onChange={(e) => handleInputChange(e.target.value, idx, "url")}
-            sx={{ flexGrow: 1 }}
+            className="flex-grow"
           />
           <Select
             options={socialMedias}
@@ -40,7 +40,7 @@ const ContactMe = ({
             onClick={() => handleInputRemove(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
-            sx={{ height: "auto" }}
+            className="min-h-full"
           />
         </Box>
       ))}

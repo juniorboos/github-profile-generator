@@ -16,14 +16,7 @@ const AboutMe = ({
     <FormControl>
       <FormControl.Label>About Me</FormControl.Label>
       {inputs.map((singleInput, idx) => (
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            gap: "0.5rem",
-          }}
-          key={idx}
-        >
+        <Box className="flex w-full gap-2" key={idx}>
           <EmojiPicker
             current={singleInput.emoji}
             isOpen={isEmojisShown === idx}
@@ -35,14 +28,14 @@ const AboutMe = ({
             placeholder="Text"
             value={singleInput.text}
             onChange={(e) => handleInputChange(e.target.value, idx, "text")}
-            sx={{ flexGrow: 1 }}
+            className="flex-grow"
           />
           <IconButton
             aria-label="Remove"
             onClick={() => handleInputRemove(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
-            sx={{ height: "auto" }}
+            className="h-auto"
           />
         </Box>
       ))}

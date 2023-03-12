@@ -37,8 +37,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Box className="flex flex-col md:flex-row min-h-screen p-4">
-        <Box className="p-4 flex-col gap-4 border-b-2 md:border-r-2 md:border-b-0 border-gray-200">
+      <Box className="flex flex-col md:flex-row min-h-screen p-4 divide-y-2 md:divide-y-0 md:divide-x-2 ">
+        <Box className="flex p-4 flex-col gap-4">
           <AboutMe inputs={aboutMeInputs} {...aboutMeInputHandlers} />
           <TechStack
             selectedTechs={selectedTechs}

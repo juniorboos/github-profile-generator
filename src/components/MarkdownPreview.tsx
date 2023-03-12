@@ -23,18 +23,12 @@ const MarkdownPreview = ({ onCopy, markdown }: MarkdownPreviewProps) => {
   };
 
   return (
-    <Box
-      sx={{
-        p: 3,
-        position: "relative",
-        flexGrow: 1,
-      }}
-    >
+    <Box className="relative p-4 flex-grow">
       <Button
         trailingIcon={isClicked ? BiCheck : BiCopy}
         aria-label="Copy markdown"
-        sx={{ position: "absolute", top: 2, right: 2 }}
         onClick={handleClick}
+        className="absolute top-4 right-4"
       >
         Copy markdown
       </Button>
@@ -43,11 +37,8 @@ const MarkdownPreview = ({ onCopy, markdown }: MarkdownPreviewProps) => {
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSanitize]}
         components={{
-          img: ({ node, ...props }) => (
-            <img
-              style={{ width: props.alt === "GitHub Stats" ? "100%" : "auto" }}
-              {...props}
-            />
+          ul: ({ node, ...props }) => (
+            <ul className="list-disc list-inside" {...props}></ul>
           ),
         }}
       />

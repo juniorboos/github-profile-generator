@@ -30,20 +30,12 @@ const EmojiPicker = ({
   }, [ref]);
 
   return (
-    <Box sx={{ position: "relative", height: "auto" }}>
-      <Button onClick={onBtnClick} sx={{ height: "100%" }}>
+    <Box className="relative h-auto">
+      <Button onClick={onBtnClick} className="h-full">
         {current}
       </Button>
       {isOpen && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "100%",
-            left: 0,
-            zIndex: 2,
-          }}
-          ref={ref}
-        >
+        <Box className="absolute top-full left-0 z-10" ref={ref}>
           <EmojiPickerReact onEmojiClick={handleEmojiUpdate} />
         </Box>
       )}
