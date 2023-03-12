@@ -37,22 +37,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Box
-        sx={{
-          display: "flex",
-          minHeight: "100vh",
-        }}
-      >
-        <Box
-          sx={{
-            p: 3,
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            borderRight: "1px solid gray",
-            minWidth: 500,
-          }}
-        >
+      <Box className="flex flex-col md:flex-row min-h-screen p-4">
+        <Box className="p-4 flex-col gap-4 border-b-2 md:border-r-2 md:border-b-0 border-gray-200">
           <AboutMe inputs={aboutMeInputs} {...aboutMeInputHandlers} />
           <TechStack
             selectedTechs={selectedTechs}
