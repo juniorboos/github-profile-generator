@@ -20,7 +20,7 @@ ${aboutMe.map(
 ).join(`
 `)}
 # Tech Stack
-${techStack.map((badge) => `${badge.value} `).join("")}
+${techStack.map((badge) => `${badge.value}`).join(" ")}
 # GitHub Stats
 ${
   Boolean(githubUser)
@@ -41,7 +41,8 @@ ${
           </td>
         </tr>
       </thead>
-    </table>`
+    </table>
+`
     : ``
 }
 # Contact Me
@@ -50,5 +51,5 @@ ${contactMeInputs
     (social) =>
       social.socialMedia && `[${social.socialMedia?.value}](${social.url})`
   )
-  .join("")}
+  .join(" ")}
 `;

@@ -33,6 +33,7 @@ const ContactMe = ({
             value={singleInput.socialMedia}
             onChange={(e) => handleInputChange(e, idx, "socialMedia")}
             placeholder="Select social"
+            menuPlacement="auto"
           />
           <IconButton
             aria-label="Remove"

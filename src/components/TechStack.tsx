@@ -24,6 +24,7 @@ const TechStack = ({
         styles={{ container: (base) => ({ ...base, width: "100%" }) }}
         value={selectedTechs}
         onChange={onChangeTechs}
+        menuPlacement="auto"
       />
     </FormControl>
   );
