@@ -39,18 +39,18 @@ function App() {
     <ThemeProvider>
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: "500px auto",
+          display: "flex",
           minHeight: "100vh",
         }}
       >
         <Box
           sx={{
-            padding: "2rem",
+            p: 3,
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
             borderRight: "1px solid gray",
+            minWidth: 500,
           }}
         >
           <AboutMe inputs={aboutMeInputs} {...aboutMeInputHandlers} />

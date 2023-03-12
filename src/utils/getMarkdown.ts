@@ -30,13 +30,13 @@ ${
           <td>
             <img
               src="https://github-readme-stats.vercel.app/api?username=${githubUser}&show_icons=true&locale=en&theme=tokyonight"
-              alt="${githubUser}'s GitHub Stats"
+              alt="GitHub Stats"
             />
           </td>
           <td>
             <img
               src="https://streak-stats.demolab.com/?user=${githubUser}&theme=tokyonight"
-              alt="${githubUser}'s GitHub Stats"
+              alt="GitHub Stats"
             />
           </td>
         </tr>
