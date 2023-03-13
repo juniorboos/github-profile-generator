@@ -1,9 +1,7 @@
 import { FormControl } from "@primer/react";
 import { ActionMeta, MultiValue } from "react-select";
 import { OptionsProps } from "../utils/markdownBadges";
-import Primitives from "@primer/primitives";
 import { Select } from "./Select";
-const { colors } = Primitives;
 export interface TechStackProps {
   selectedTechs: MultiValue<OptionsProps>;
   techOptions: OptionsProps[];
