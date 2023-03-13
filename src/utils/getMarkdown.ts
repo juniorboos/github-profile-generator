@@ -13,14 +13,17 @@ export const getMarkdown = (
   githubUser: string,
   contactMeInputs: ContactMe
 ) => `# Hello there 👋
+
 # About Me
 ${aboutMe.map(
   (singleInput) =>
     singleInput.text && `- ${singleInput.emoji} ${singleInput.text}`
 ).join(`
 `)}
+
 # Tech Stack
 ${techStack.map((badge) => `${badge.value}`).join(" ")}
+
 # GitHub Stats
 ${
   Boolean(githubUser)

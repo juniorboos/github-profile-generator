@@ -25,7 +25,7 @@ const AboutMe = ({
             handleEmojiUpdate={(e) => handleInputChange(e.emoji, idx, "emoji")}
           />
           <TextInput
-            placeholder="Text"
+            placeholder="Description"
             value={singleInput.text}
             onChange={(e) => handleInputChange(e.target.value, idx, "text")}
             className="flex-grow"
