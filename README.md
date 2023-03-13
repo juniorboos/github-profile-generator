@@ -6,7 +6,8 @@ This README generator is a great tool for developers who want to create a profes
 
 It's built using the following technologies:
 
-- Tech stack
+# Tech stack
+
 - React
 - TypeScript
 - Vite
