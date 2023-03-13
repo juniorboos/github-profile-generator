@@ -14,6 +14,7 @@ export const getMarkdown = (
   contactMeInputs: ContactMe
 ) => `# Hello there 👋
 
+
 # About Me
 ${aboutMe.map(
   (singleInput) =>
@@ -48,6 +49,7 @@ ${
 `
     : ``
 }
+
 # Contact Me
 ${contactMeInputs
   .map(

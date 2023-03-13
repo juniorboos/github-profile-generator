@@ -1,9 +1,10 @@
 import { Box, Button, FormControl, IconButton, TextInput } from "@primer/react";
 import { OptionsProps, socialMedias } from "../utils/markdownBadges";
-import Select, { SingleValue } from "react-select";
+import { SingleValue } from "react-select";
 import { InputHandlerProps } from "../hooks/useInputHandler";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
+import { Select } from "./Select";
 
 interface SocialMediaProps {
   url: string;
@@ -20,7 +21,7 @@ const ContactMe = ({
     <FormControl>
       <FormControl.Label>Social Medias</FormControl.Label>
       {inputs.map((singleInput, idx) => (
-        <Box className="flex w-full gap-2">
+        <Box className="flex w-full gap-2" key={idx}>
           <TextInput
             placeholder="http://..."
             value={singleInput.url}
@@ -29,11 +30,11 @@ const ContactMe = ({
           />
           <Select
             options={socialMedias}
-            styles={{ container: (base) => ({ ...base, width: 180 }) }}
             value={singleInput.socialMedia}
             onChange={(e) => handleInputChange(e, idx, "socialMedia")}
             placeholder="Select social"
             menuPlacement="auto"
+            width={180}
           />
           <IconButton
             aria-label="Remove"

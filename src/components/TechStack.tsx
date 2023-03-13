@@ -1,11 +1,13 @@
 import { FormControl } from "@primer/react";
-import Select, { MultiValue } from "react-select";
+import { ActionMeta, MultiValue } from "react-select";
 import { OptionsProps } from "../utils/markdownBadges";
-
+import Primitives from "@primer/primitives";
+import { Select } from "./Select";
+const { colors } = Primitives;
 export interface TechStackProps {
   selectedTechs: MultiValue<OptionsProps>;
   techOptions: OptionsProps[];
-  onChangeTechs: (newValue: MultiValue<OptionsProps>) => void;
+  onChangeTechs: (newValue: unknown, actionMeta: ActionMeta<unknown>) => void;
 }
 
 const TechStack = ({
@@ -21,10 +23,10 @@ const TechStack = ({
         placeholder="Choose your techs"
         name="markdown-badges"
         options={techOptions}
-        styles={{ container: (base) => ({ ...base, width: "100%" }) }}
         value={selectedTechs}
         onChange={onChangeTechs}
         menuPlacement="auto"
+        width="100%"
       />
     </FormControl>
   );

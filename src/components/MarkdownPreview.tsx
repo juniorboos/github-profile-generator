@@ -1,4 +1,4 @@
-import { Box, Button } from "@primer/react";
+import { Box } from "@primer/react";
 import { MarkdownEditor } from "@primer/react/drafts";
 import { BiCopy } from "@react-icons/all-files/bi/BiCopy";
 import { BiCheck } from "@react-icons/all-files/bi/BiCheck";

@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@primer/primitives": "^7.11.1",
     "@primer/react": "^35.20.0",
     "@react-icons/all-files": "^4.1.0",
     "emoji-picker-react": "^4.4.7",

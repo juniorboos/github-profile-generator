@@ -10,6 +10,8 @@ import { GithubStats } from "./components/GithubStats";
 import { ContactMe, SocialMediaProps } from "./components/ContactMe";
 import { useAboutMeHandler } from "./hooks/useAboutMeHandler";
 import { useInputHandler } from "./hooks/useInputHandler";
+import Primitives from "@primer/primitives";
+const { colors } = Primitives;
 
 function App() {
   const { inputs: aboutMeInputs, ...aboutMeInputHandlers } = useAboutMeHandler({
@@ -41,13 +43,18 @@ function App() {
   );
 
   return (
-    <ThemeProvider>
-      <Box className="flex flex-col md:flex-row min-h-screen p-4 divide-y-2 md:divide-y-0 md:divide-x-2 ">
+    <ThemeProvider colorMode="night">
+      <Box
+        className="flex flex-col md:flex-row min-h-screen p-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-gray-700"
+        bg={colors.dark.canvas.default}
+      >
         <Box className="flex p-4 flex-col gap-4 md:min-w-[500px]">
           <AboutMe inputs={aboutMeInputs} {...aboutMeInputHandlers} />
           <TechStack
             selectedTechs={selectedTechs}
-            onChangeTechs={(badges) => setSelectedTechs(badges)}
+            onChangeTechs={(badges) =>
+              setSelectedTechs(badges as MultiValue<OptionsProps>)
+            }
             techOptions={markdownBadges}
           />
           <GithubStats
