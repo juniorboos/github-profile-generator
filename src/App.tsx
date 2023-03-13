@@ -28,19 +28,14 @@ function App() {
   const { inputs: contactMeInputs, ...contactMeInputHandlers } =
     useInputHandler<SocialMediaProps>({ url: "" });
 
-  const [markdown, setMarkdown] = useState(
-    getMarkdown(aboutMeInputs, selectedTechs, githubUser, contactMeInputs)
+  const markdown = getMarkdown(
+    aboutMeInputs,
+    selectedTechs,
+    githubUser,
+    contactMeInputs
   );
 
   const copyToClipboard = () => navigator.clipboard.writeText(markdown);
-
-  useEffect(
-    () =>
-      setMarkdown(
-        getMarkdown(aboutMeInputs, selectedTechs, githubUser, contactMeInputs)
-      ),
-    [aboutMeInputs, selectedTechs, githubUser, contactMeInputs]
-  );
 
   return (
     <ThemeProvider colorMode="night">
