@@ -1,13 +1,20 @@
 import { Box, Button } from "@primer/react";
-import EmojiPickerReact, { EmojiClickData } from "emoji-picker-react";
 import { useEffect, useRef } from "react";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
+
+interface EmojiProps {
+  id: string;
+  name: string;
+  native: string;
+}
 
 interface EmojiPickerProps {
   current: string;
   isOpen: boolean;
   onBtnClick: () => void;
   onClickOutside: () => void;
-  handleEmojiUpdate: (e: EmojiClickData) => void;
+  handleEmojiUpdate: (emoji: EmojiProps) => void;
 }
 
 const EmojiPicker = ({
@@ -36,7 +43,10 @@ const EmojiPicker = ({
       </Button>
       {isOpen && (
         <Box className="absolute top-full left-0 z-10" ref={ref}>
-          <EmojiPickerReact onEmojiClick={handleEmojiUpdate} />
+          <Picker
+            data={data}
+            onEmojiSelect={(e: EmojiProps) => handleEmojiUpdate(e)}
+          />
         </Box>
       )}
     </Box>

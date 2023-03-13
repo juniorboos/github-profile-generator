@@ -22,7 +22,7 @@ const AboutMe = ({
             isOpen={isEmojisShown === idx}
             onBtnClick={() => handleShowEmojis(idx)}
             onClickOutside={() => handleShowEmojis(-1)}
-            handleEmojiUpdate={(e) => handleInputChange(e.emoji, idx, "emoji")}
+            handleEmojiUpdate={(e) => handleInputChange(e.native, idx, "emoji")}
           />
           <TextInput
             placeholder="Description"
