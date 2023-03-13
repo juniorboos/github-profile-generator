@@ -23,7 +23,7 @@ const ContactMe = ({
       {inputs.map((singleInput, idx) => (
         <Box className="flex w-full gap-2" key={idx}>
           <TextInput
-            placeholder="http://..."
+            placeholder="http://example.com"
             value={singleInput.url}
             onChange={(e) => handleInputChange(e.target.value, idx, "url")}
             className="flex-grow"
@@ -41,7 +41,6 @@ const ContactMe = ({
             onClick={() => handleInputRemove(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
-            className="min-h-full"
           />
         </Box>
       ))}
