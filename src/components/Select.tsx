@@ -1,4 +1,8 @@
-import ReactSelect from "react-select";
+import ReactSelect, {
+  components,
+  createFilter,
+  OptionProps,
+} from "react-select";
 import Primitives from "@primer/primitives";
 import { ComponentProps } from "react";
 const { colors } = Primitives;
@@ -6,6 +10,21 @@ const { colors } = Primitives;
 export interface SelectProps extends ComponentProps<ReactSelect> {
   width?: string | number;
 }
+
+interface CustomOptionProps extends OptionProps {
+  children: React.ReactNode;
+  onMouseMove?: (event: React.MouseEvent) => void;
+  onMouseOver?: (event: React.MouseEvent) => void;
+}
+
+const CustomOption = ({ children, ...props }: CustomOptionProps) => {
+  const { onMouseMove, onMouseOver, ...rest } = props;
+  return (
+    <components.Option {...rest} className="hover:bg-blue-100 focus:bg-none">
+      {children}
+    </components.Option>
+  );
+};
 
 const Select = ({ width, ...props }: SelectProps) => {
   return (
@@ -21,6 +40,8 @@ const Select = ({ width, ...props }: SelectProps) => {
         input: (base) => ({ ...base, color: colors.dark.fg.default }),
       }}
       className="text-sm"
+      filterOption={createFilter({ ignoreAccents: false })}
+      components={{ Option: CustomOption }}
     />
   );
 };
