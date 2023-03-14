@@ -2,37 +2,39 @@ import { Box, FormControl, Button, TextInput, IconButton } from "@primer/react";
 import { EmojiPicker } from "./EmojiPicker";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
-import { AboutMeHandlerProps } from "../hooks/useAboutMeHandler";
+import { useAboutMeHandler } from "../hooks/useAboutMeHandler";
 
-const AboutMe = ({
-  inputs,
-  isEmojisShown,
-  handleInputAdd,
-  handleInputChange,
-  handleInputRemove,
-  handleShowEmojis,
-}: AboutMeHandlerProps) => {
+const AboutMe = () => {
+  const {
+    about,
+    isEmojisShown,
+    handleShowEmojis,
+    handleOnChange,
+    handleRemoveInput,
+    handleAddInput,
+  } = useAboutMeHandler();
+
   return (
     <FormControl>
       <FormControl.Label>About Me</FormControl.Label>
-      {inputs.map((singleInput, idx) => (
+      {about?.map((singleInput, idx) => (
         <Box className="flex w-full gap-2" key={idx}>
           <EmojiPicker
             current={singleInput.emoji}
             isOpen={isEmojisShown === idx}
             onBtnClick={() => handleShowEmojis(idx)}
             onClickOutside={() => handleShowEmojis(-1)}
-            handleEmojiUpdate={(e) => handleInputChange(e.native, idx, "emoji")}
+            handleEmojiUpdate={(e) => handleOnChange(e.native, idx, "emoji")}
           />
           <TextInput
             placeholder="Description"
             value={singleInput.text}
-            onChange={(e) => handleInputChange(e.target.value, idx, "text")}
+            onChange={(e) => handleOnChange(e.target.value, idx, "text")}
             className="flex-grow"
           />
           <IconButton
             aria-label="Remove"
-            onClick={() => handleInputRemove(idx)}
+            onClick={() => handleRemoveInput(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
             className="h-auto"
@@ -40,7 +42,7 @@ const AboutMe = ({
         </Box>
       ))}
       <Button
-        onClick={() => handleInputAdd()}
+        onClick={() => handleAddInput()}
         leadingIcon={MdAddCircleOutline}
         variant="outline"
       >

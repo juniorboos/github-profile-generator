@@ -1,19 +1,21 @@
 import { FormControl, TextInput } from "@primer/react";
-import { ChangeEventHandler } from "react";
+import { ChangeEvent } from "react";
+import { useInputs, useInputsDispatch } from "../context/inputsContext";
 
-interface GithubStatsProps {
-  value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-}
+const GithubStats = () => {
+  const inputs = useInputs();
+  const dispatch = useInputsDispatch();
 
-const GithubStats = ({ value, onChange }: GithubStatsProps) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) =>
+    dispatch({ type: "SET_GITHUB_USER", payload: e.target.value });
+
   return (
     <FormControl>
       <FormControl.Label>Github User</FormControl.Label>
       <TextInput
         placeholder="Username"
-        value={value}
-        onChange={onChange}
+        value={inputs?.githubUser}
+        onChange={handleOnChange}
         block
       />
     </FormControl>

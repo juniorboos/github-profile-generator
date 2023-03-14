@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
-interface EmojiProps {
+export interface EmojiProps {
   id: string;
   name: string;
   native: string;

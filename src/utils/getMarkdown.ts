@@ -8,22 +8,22 @@ type TechStack = MultiValue<OptionsProps>;
 type ContactMe = SocialMediaProps[];
 
 export const getMarkdown = (
-  aboutMe: AboutMe,
-  techStack: TechStack,
-  githubUser: string,
-  contactMeInputs: ContactMe
+  aboutMe?: AboutMe,
+  techStack?: TechStack,
+  githubUser?: string,
+  contactMeInputs?: ContactMe
 ) => `# Hello there 👋
 
 
 # About Me
-${aboutMe.map(
+${aboutMe?.map(
   (singleInput) =>
     singleInput.text && `- ${singleInput.emoji} ${singleInput.text}`
 ).join(`
 `)}
 
 # Tech Stack
-${techStack.map((badge) => `${badge.value}`).join(" ")}
+${techStack?.map((badge) => `${badge.value}`).join(" ")}
 
 # GitHub Stats
 ${
@@ -52,7 +52,7 @@ ${
 
 # Contact Me
 ${contactMeInputs
-  .map(
+  ?.map(
     (social) =>
       social.socialMedia && `[${social.socialMedia?.value}](${social.url})`
   )

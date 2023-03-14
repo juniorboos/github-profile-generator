@@ -1,18 +1,15 @@
 import { FormControl } from "@primer/react";
-import { ActionMeta, MultiValue } from "react-select";
-import { OptionsProps } from "../utils/markdownBadges";
+import { useInputs, useInputsDispatch } from "../context/inputsContext";
+import { markdownBadges, OptionsProps } from "../utils/markdownBadges";
 import { Select } from "./Select";
-export interface TechStackProps {
-  selectedTechs: MultiValue<OptionsProps>;
-  techOptions: OptionsProps[];
-  onChangeTechs: (newValue: unknown, actionMeta: ActionMeta<unknown>) => void;
-}
 
-const TechStack = ({
-  selectedTechs,
-  onChangeTechs,
-  techOptions,
-}: TechStackProps) => {
+const TechStack = () => {
+  const inputs = useInputs();
+  const dispatch = useInputsDispatch();
+
+  const handleOnChange = (newValue: OptionsProps[]) =>
+    dispatch({ type: "SET_TECHS", payload: newValue });
+
   return (
     <FormControl>
       <FormControl.Label>Tech Stack</FormControl.Label>
@@ -20,9 +17,9 @@ const TechStack = ({
         isMulti
         placeholder="Choose your techs"
         name="markdown-badges"
-        options={techOptions}
-        value={selectedTechs}
-        onChange={onChangeTechs}
+        options={markdownBadges}
+        value={inputs?.techs}
+        onChange={(newValue) => handleOnChange(newValue as OptionsProps[])}
         menuPlacement="auto"
         width="100%"
       />

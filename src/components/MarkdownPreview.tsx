@@ -5,19 +5,24 @@ import { BsEye } from "@react-icons/all-files/bs/BsEye";
 import { BsEyeSlash } from "@react-icons/all-files/bs/BsEyeSlash";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
+import { useInputs } from "../context/inputsContext";
+import { getMarkdown } from "../utils/getMarkdown";
 
-interface MarkdownPreviewProps {
-  onCopy: () => void;
-  markdown: string;
-}
-
-const MarkdownPreview = ({ onCopy, markdown }: MarkdownPreviewProps) => {
+const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState(false);
+  const inputs = useInputs();
+
+  const markdown = getMarkdown(
+    inputs?.about,
+    inputs?.techs,
+    inputs?.githubUser,
+    inputs?.socials
+  );
 
   const handleClick = () => {
     setIsClicked(true);
-    onCopy();
+    navigator.clipboard.writeText(markdown);
     // Change back to the initial icon after 3 seconds
     setTimeout(() => setIsClicked(false), 3000);
   };

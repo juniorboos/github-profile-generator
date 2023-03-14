@@ -1,51 +1,49 @@
 import { Box, Button, FormControl, IconButton, TextInput } from "@primer/react";
 import { OptionsProps, socialMedias } from "../utils/markdownBadges";
-import { SingleValue } from "react-select";
-import { InputHandlerProps } from "../hooks/useInputHandler";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { Select } from "./Select";
+import { useContactMeHandler } from "../hooks/useContactMeHandler";
+import { SocialMediaProps } from "../context/types";
 
-interface SocialMediaProps {
-  url: string;
-  socialMedia?: SingleValue<OptionsProps>;
-}
+const ContactMe = () => {
+  const {
+    socials,
+    handleOnChangeUrl,
+    handleOnChangeSocialMedia,
+    handleRemoveInput,
+    handleAddInput,
+  } = useContactMeHandler();
 
-const ContactMe = ({
-  inputs,
-  handleInputChange,
-  handleInputRemove,
-  handleInputAdd,
-}: InputHandlerProps<SocialMediaProps>) => {
   return (
     <FormControl>
       <FormControl.Label>Social Medias</FormControl.Label>
-      {inputs.map((singleInput, idx) => (
+      {socials?.map((singleInput, idx) => (
         <Box className="flex w-full gap-2" key={idx}>
           <TextInput
             placeholder="http://example.com"
             value={singleInput.url}
-            onChange={(e) => handleInputChange(e.target.value, idx, "url")}
+            onChange={(e) => handleOnChangeUrl(e.target.value, idx)}
             className="flex-grow"
           />
           <Select
             options={socialMedias}
             value={singleInput.socialMedia}
-            onChange={(e) => handleInputChange(e, idx, "socialMedia")}
+            onChange={(e) => handleOnChangeSocialMedia(e as OptionsProps, idx)}
             placeholder="Select social"
             menuPlacement="auto"
             width={180}
           />
           <IconButton
             aria-label="Remove"
-            onClick={() => handleInputRemove(idx)}
+            onClick={() => handleRemoveInput(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
           />
         </Box>
       ))}
       <Button
-        onClick={() => handleInputAdd()}
+        onClick={() => handleAddInput()}
         leadingIcon={MdAddCircleOutline}
         variant="outline"
       >
