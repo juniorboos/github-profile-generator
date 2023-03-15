@@ -1,5 +1,5 @@
 import { SingleValue } from "react-select";
-import { OptionsProps } from "../utils/markdownBadges";
+import { OptionsProps } from "../utils";
 
 export interface AboutMeInputProps {
   text: string;

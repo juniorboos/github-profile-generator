@@ -1,6 +1,6 @@
 import { useInputs, useInputsDispatch } from "../context/inputsContext";
 import { SocialMediaProps } from "../context/types";
-import { OptionsProps } from "../utils/markdownBadges";
+import { OptionsProps } from "../utils";
 
 interface ContactMeHandlerProps {
   socials?: SocialMediaProps[];

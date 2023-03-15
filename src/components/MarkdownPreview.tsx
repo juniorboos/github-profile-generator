@@ -6,7 +6,7 @@ import { BsEyeSlash } from "@react-icons/all-files/bs/BsEyeSlash";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import { useInputs } from "../context/inputsContext";
-import { getMarkdown } from "../utils/getMarkdown";
+import { getMarkdown } from "../utils";
 
 const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);

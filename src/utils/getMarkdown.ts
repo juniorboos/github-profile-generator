@@ -1,6 +1,6 @@
 import { MultiValue } from "react-select";
-import { SocialMediaProps } from "../components/ContactMe";
-import { AboutMeInputProps } from "../hooks/useAboutMeHandler";
+import { SocialMediaProps } from "../components";
+import { AboutMeInputProps } from "../hooks";
 import { OptionsProps } from "./markdownBadges";
 
 type AboutMe = AboutMeInputProps[];

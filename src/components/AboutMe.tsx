@@ -1,8 +1,8 @@
 import { Box, FormControl, Button, TextInput, IconButton } from "@primer/react";
-import { EmojiPicker } from "./EmojiPicker";
+import { EmojiPicker } from "./index";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
-import { useAboutMeHandler } from "../hooks/useAboutMeHandler";
+import { useAboutMeHandler } from "../hooks";
 
 const AboutMe = () => {
   const {
