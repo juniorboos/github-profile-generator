@@ -30,7 +30,7 @@ const ContactMe = () => {
             options={socialMedias}
             value={singleInput.socialMedia}
             onChange={(e) => handleOnChangeSocialMedia(e as OptionsProps, idx)}
-            placeholder="Select social"
+            placeholder="Social"
             menuPlacement="auto"
             width={180}
           />
@@ -39,6 +39,7 @@ const ContactMe = () => {
             onClick={() => handleRemoveInput(idx)}
             icon={MdRemoveCircleOutline}
             variant="danger"
+            className="h-[unset]"
           />
         </Box>
       ))}
