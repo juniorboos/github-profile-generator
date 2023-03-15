@@ -38,6 +38,7 @@ const Select = ({ width, ...props }: SelectProps) => {
           borderColor: colors.dark.border.default,
         }),
         input: (base) => ({ ...base, color: colors.dark.fg.default }),
+        singleValue: (base) => ({ ...base, color: colors.dark.fg.default }),
       }}
       className="text-sm"
       filterOption={createFilter({ ignoreAccents: false })}
