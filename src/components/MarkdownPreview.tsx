@@ -28,12 +28,12 @@ const MarkdownPreview = () => {
   };
 
   return (
-    <Box className="relative p-4 flex-grow min-h-full">
+    <Box className="flex relative p-4 flex-grow min-h-full">
       <MDEditor
         value={markdown}
         hideToolbar
         preview={isEditing ? "edit" : "preview"}
-        className="min-h-full"
+        className="min-h-full flex-grow h-[unset]"
         visibleDragbar={false}
       />
       <Box className="absolute top-6 right-9 flex gap-2">
