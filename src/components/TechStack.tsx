@@ -4,7 +4,7 @@ import { markdownBadges, OptionsProps } from "../utils";
 import { Select } from "./index";
 
 const TechStack = () => {
-  const inputs = useInputs();
+  const { techs } = useInputs();
   const dispatch = useInputsDispatch();
 
   const handleOnChange = (newValue: OptionsProps[]) =>
@@ -18,7 +18,7 @@ const TechStack = () => {
         placeholder="Choose your techs"
         name="markdown-badges"
         options={markdownBadges}
-        value={inputs?.techs}
+        value={techs}
         onChange={(newValue) => handleOnChange(newValue as OptionsProps[])}
         menuPlacement="auto"
         width="100%"

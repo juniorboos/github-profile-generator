@@ -3,7 +3,7 @@ import { useInputs, useInputsDispatch } from "../context/inputsContext";
 import { AboutMeInputProps } from "../context/types";
 
 interface AboutMeHandlerProps {
-  about?: AboutMeInputProps[];
+  about: AboutMeInputProps[];
   isEmojisShown: null | number;
   handleShowEmojis: (idx: number) => void;
   handleOnChange: (
@@ -16,8 +16,7 @@ interface AboutMeHandlerProps {
 }
 
 const useAboutMeHandler = (): AboutMeHandlerProps => {
-  const inputs = useInputs();
-  const about = inputs?.about;
+  const { about } = useInputs();
 
   const dispatch = useInputsDispatch();
   const [isEmojisShown, setIsEmojisShown] = useState<null | number>(null);

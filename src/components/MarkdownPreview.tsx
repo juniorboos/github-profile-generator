@@ -11,14 +11,9 @@ import { getMarkdown } from "../utils";
 const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState(false);
-  const inputs = useInputs();
+  const { about, techs, githubUser, socials } = useInputs();
 
-  const markdown = getMarkdown(
-    inputs?.about,
-    inputs?.techs,
-    inputs?.githubUser,
-    inputs?.socials
-  );
+  const markdown = getMarkdown(about, techs, githubUser, socials);
 
   const handleClick = () => {
     setIsClicked(true);

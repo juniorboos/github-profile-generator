@@ -3,7 +3,7 @@ import { SocialMediaProps } from "../context/types";
 import { OptionsProps } from "../utils";
 
 interface ContactMeHandlerProps {
-  socials?: SocialMediaProps[];
+  socials: SocialMediaProps[];
   handleOnChangeUrl: (value: string, idx: number) => void;
   handleOnChangeSocialMedia: (value: OptionsProps, idx: number) => void;
   handleRemoveInput: (idx: number) => void;
@@ -11,8 +11,7 @@ interface ContactMeHandlerProps {
 }
 
 const useContactMeHandler = (): ContactMeHandlerProps => {
-  const inputs = useInputs();
-  const socials = inputs?.socials;
+  const { socials } = useInputs();
   const dispatch = useInputsDispatch();
 
   const handleOnChangeUrl = (value: string, idx: number) =>

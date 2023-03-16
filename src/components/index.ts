@@ -1,4 +1,4 @@
-export * from "./AboutMe";
+export * from "./about-me";
 export * from "./ContactMe";
 export * from "./EmojiPicker";
 export * from "./GithubStats";

@@ -1,8 +1,8 @@
 import { Box, FormControl, Button, TextInput, IconButton } from "@primer/react";
-import { EmojiPicker } from "./index";
+import { EmojiPicker } from "../index";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
-import { useAboutMeHandler } from "../hooks";
+import { useAboutMeHandler } from "../../hooks";
 
 const AboutMe = () => {
   const {
@@ -17,7 +17,7 @@ const AboutMe = () => {
   return (
     <FormControl>
       <FormControl.Label>About Me</FormControl.Label>
-      {about?.map((singleInput, idx) => (
+      {about.map((singleInput, idx) => (
         <Box className="flex w-full gap-2" key={idx}>
           <EmojiPicker
             current={singleInput.emoji}

@@ -18,7 +18,7 @@ const ContactMe = () => {
   return (
     <FormControl>
       <FormControl.Label>Social Medias</FormControl.Label>
-      {socials?.map((singleInput, idx) => (
+      {socials.map((singleInput, idx) => (
         <Box className="flex w-full gap-2" key={idx}>
           <TextInput
             placeholder="http://example.com"

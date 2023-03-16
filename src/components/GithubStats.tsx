@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 import { useInputs, useInputsDispatch } from "../context/inputsContext";
 
 const GithubStats = () => {
-  const inputs = useInputs();
+  const { githubUser } = useInputs();
   const dispatch = useInputsDispatch();
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) =>
@@ -14,7 +14,7 @@ const GithubStats = () => {
       <FormControl.Label>Github User</FormControl.Label>
       <TextInput
         placeholder="Username"
-        value={inputs?.githubUser}
+        value={githubUser}
         onChange={handleOnChange}
         block
       />
