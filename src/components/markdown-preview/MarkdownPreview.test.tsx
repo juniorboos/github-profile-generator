@@ -4,7 +4,7 @@ import { MarkdownPreview } from "./MarkdownPreview";
 
 const markdown = getMarkdown([], [], "", []);
 
-describe("MarkdownPreview", () => {
+describe("<MarkdownPreview />", () => {
   test("renders Markdown editor and preview sections", () => {
     const { getByRole, getByTestId } = render(<MarkdownPreview />);
 

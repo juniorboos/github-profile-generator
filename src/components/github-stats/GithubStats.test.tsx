@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "../../utils/test";
 import { GithubStats } from "./GithubStats";
 
-describe("GithubStats component", () => {
+describe("<GithubStats />", () => {
   test("should render a label and an input", () => {
     render(<GithubStats />);
 

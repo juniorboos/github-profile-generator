@@ -1,7 +1,7 @@
 import { FormControl } from "@primer/react";
-import { useInputs, useInputsDispatch } from "../context/inputsContext";
-import { markdownBadges, OptionsProps } from "../utils";
-import { Select } from "./index";
+import { useInputs, useInputsDispatch } from "../../context/inputsContext";
+import { markdownBadges, OptionsProps } from "../../utils";
+import { Select } from "../index";
 
 const TechStack = () => {
   const { techs } = useInputs();

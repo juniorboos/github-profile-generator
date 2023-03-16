@@ -5,4 +5,4 @@ export * from "./github-stats";
 export * from "./inputs";
 export * from "./markdown-preview";
 export * from "./select";
-export * from "./TechStack";
+export * from "./tech-stack";
