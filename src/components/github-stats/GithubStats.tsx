@@ -1,6 +1,6 @@
 import { FormControl, TextInput } from "@primer/react";
 import { ChangeEvent } from "react";
-import { useInputs, useInputsDispatch } from "../context/inputsContext";
+import { useInputs, useInputsDispatch } from "../../context/inputsContext";
 
 const GithubStats = () => {
   const { githubUser } = useInputs();

@@ -39,5 +39,3 @@ export type Action =
     }
   | { type: "SET_TECHS"; payload: InputsState["techs"] }
   | { type: "SET_GITHUB_USER"; payload: InputsState["githubUser"] };
-
-export type Dispatch = (action: Action) => void;
