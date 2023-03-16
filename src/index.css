@@ -20,4 +20,20 @@ code {
   h1 {
     @apply text-2xl font-bold leading-loose;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply rounded bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded border border-slate-500 bg-slate-500;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
 }
