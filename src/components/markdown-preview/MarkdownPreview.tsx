@@ -38,12 +38,14 @@ const MarkdownPreview = () => {
           aria-label={`Go to ${isEditing ? "preview" : "edit"} mode`}
           onClick={() => setIsEditing((prevIsEditing) => !prevIsEditing)}
           size="large"
+          title={`Go to ${isEditing ? "preview" : "edit"} mode`}
         />
         <IconButton
           icon={isClicked ? BiCheck : BiCopy}
           aria-label="Copy markdown"
           onClick={handleClick}
           size="large"
+          title="Copy markdown"
         />
       </Box>
     </Box>
