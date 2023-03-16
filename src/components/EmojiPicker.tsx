@@ -38,11 +38,11 @@ const EmojiPicker = ({
 
   return (
     <Box className="relative h-auto">
-      <Button onClick={onBtnClick} className="h-full">
+      <Button onClick={onBtnClick} className="h-full" aria-label="Select emoji">
         {current}
       </Button>
       {isOpen && (
-        <Box className="absolute top-full left-0 z-10" ref={ref}>
+        <Box className="absolute top-full left-0 z-10" ref={ref} role="dialog">
           <Picker
             data={data}
             onEmojiSelect={(e: EmojiProps) => handleEmojiUpdate(e)}
