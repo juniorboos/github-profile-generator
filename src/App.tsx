@@ -1,8 +1,7 @@
 import { Box, ThemeProvider } from "@primer/react";
-import { MarkdownPreview } from "./components/MarkdownPreview";
+import { MarkdownPreview, Inputs } from "./components";
 import Primitives from "@primer/primitives";
 import { InputsProvider } from "./context/InputsProvider";
-import Inputs from "./components/Inputs";
 const { colors } = Primitives;
 
 function App() {

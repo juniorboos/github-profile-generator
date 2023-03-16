@@ -1,5 +1,5 @@
 import { Box } from "@primer/react";
-import { AboutMe, ContactMe, GithubStats, TechStack } from "./index";
+import { AboutMe, ContactMe, GithubStats, TechStack } from "../index";
 
 const Inputs = () => {
   return (
@@ -12,4 +12,4 @@ const Inputs = () => {
   );
 };
 
-export default Inputs;
+export { Inputs };
