@@ -1,10 +1,10 @@
 import { Box, Button, FormControl, IconButton, TextInput } from "@primer/react";
-import { OptionsProps, socialMedias } from "../utils";
+import { OptionsProps, socialMedias } from "../../utils";
 import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
-import { Select } from "./index";
-import { useContactMeHandler } from "../hooks";
-import { SocialMediaProps } from "../context/types";
+import { Select } from "../index";
+import { useContactMeHandler } from "../../hooks";
+import { SocialMediaProps } from "../../context/types";
 
 const ContactMe = () => {
   const {
@@ -40,6 +40,7 @@ const ContactMe = () => {
             icon={MdRemoveCircleOutline}
             variant="danger"
             className="h-[unset]"
+            name="Remove"
           />
         </Box>
       ))}

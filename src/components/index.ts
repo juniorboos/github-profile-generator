@@ -1,5 +1,5 @@
 export * from "./about-me";
-export * from "./ContactMe";
+export * from "./contact-me";
 export * from "./EmojiPicker";
 export * from "./GithubStats";
 export * from "./Inputs";
