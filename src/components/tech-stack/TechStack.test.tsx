@@ -18,8 +18,6 @@ describe("<TechStack />", () => {
     render(<TechStack />);
     const selectInput = screen.getByRole("combobox");
     fireEvent.mouseDown(selectInput);
-    const options = screen.getAllByRole("option");
-    expect(options).toHaveLength(markdownBadges.length);
     markdownBadges.forEach((option) => {
       expect(screen.getByText(option.label)).toBeInTheDocument();
     });

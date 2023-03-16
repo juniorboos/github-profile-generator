@@ -20,11 +20,7 @@ interface CustomOptionProps extends OptionProps {
 const CustomOption = ({ children, ...props }: CustomOptionProps) => {
   const { onMouseMove, onMouseOver, ...rest } = props;
   return (
-    <components.Option
-      {...rest}
-      className="hover:bg-blue-100 focus:bg-none"
-      innerProps={{ role: "option" }}
-    >
+    <components.Option {...rest} className="hover:bg-blue-100 focus:bg-none">
       {children}
     </components.Option>
   );
