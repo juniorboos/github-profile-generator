@@ -23,7 +23,7 @@ const MarkdownPreview = () => {
   };
 
   return (
-    <Box className="flex relative p-4 flex-grow min-h-full">
+    <Box className="flex relative p-4 flex-grow h-full md:h-[unset] min-h-[400px]">
       <MDEditor
         value={markdown}
         hideToolbar
