@@ -5,8 +5,8 @@ import { BsEye } from "@react-icons/all-files/bs/BsEye";
 import { BsEyeSlash } from "@react-icons/all-files/bs/BsEyeSlash";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { useInputs } from "../context/inputsContext";
-import { getMarkdown } from "../utils";
+import { useInputs } from "../../context/inputsContext";
+import { getMarkdown } from "../../utils";
 
 const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -30,6 +30,7 @@ const MarkdownPreview = () => {
         preview={isEditing ? "edit" : "preview"}
         className="min-h-full flex-grow h-[unset]"
         visibleDragbar={false}
+        data-testid="markdown-preview"
       />
       <Box className="absolute top-6 right-9 flex gap-2">
         <IconButton

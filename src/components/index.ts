@@ -3,6 +3,6 @@ export * from "./contact-me";
 export * from "./emoji-picker";
 export * from "./github-stats";
 export * from "./inputs";
-export * from "./MarkdownPreview";
+export * from "./markdown-preview";
 export * from "./Select";
 export * from "./TechStack";
