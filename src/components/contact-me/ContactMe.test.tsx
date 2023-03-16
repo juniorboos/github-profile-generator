@@ -21,7 +21,7 @@ describe("<ContactMe />", () => {
 
   it("should allow removing an input", () => {
     render(<ContactMe />);
-    const removeButton = screen.getAllByRole("button", { name: "Remove" })[0];
+    const removeButton = screen.getByRole("button", { name: "Remove" });
     fireEvent.click(removeButton);
     expect(
       screen.queryByPlaceholderText("http://example.com")
