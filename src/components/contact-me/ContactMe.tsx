@@ -28,6 +28,7 @@ const ContactMe = () => {
           />
           <Select
             options={socialMedias}
+            aria-label="Select social media"
             value={singleInput.socialMedia}
             onChange={(e) => handleOnChangeSocialMedia(e as OptionsProps, idx)}
             placeholder="Social"

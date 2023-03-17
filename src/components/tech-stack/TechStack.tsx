@@ -16,6 +16,7 @@ const TechStack = () => {
       <Select
         isMulti
         placeholder="Choose your techs"
+        aria-label="Choose your techs"
         name="markdown-badges"
         options={markdownBadges}
         value={techs}
