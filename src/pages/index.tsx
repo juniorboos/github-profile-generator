@@ -23,7 +23,7 @@ function HomePage() {
         <ThemeProvider colorMode="night">
           <InputsProvider>
             <Box
-              className="flex flex-col md:flex-row min-h-screen p-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-gray-700"
+              className="flex flex-col md:flex-row min-h-screen p-4"
               bg={colors.dark.canvas.default}
             >
               <Inputs />
