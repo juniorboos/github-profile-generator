@@ -13,7 +13,7 @@ import "@uiw/react-markdown-preview/markdown.css";
 
 const MDEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
-  { ssr: false, loading: () => <div>Loading</div> }
+  { ssr: false }
 );
 
 const MarkdownPreview = () => {
