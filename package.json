@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "tsc && next build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "test": "jest --watch"
   },
   "dependencies": {
@@ -46,6 +48,8 @@
     "text-encoding": "^0.7.0",
     "ts-jest": "^29.0.5",
     "typescript": "^4.5.4",
-    "vite": "^2.9.0"
+    "vite": "^2.9.0",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4"
   }
 }

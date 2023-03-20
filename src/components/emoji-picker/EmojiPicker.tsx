@@ -34,7 +34,7 @@ const EmojiPicker = ({
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [ref]);
+  }, [ref, onClickOutside]);
 
   return (
     <Box className="relative h-auto">
