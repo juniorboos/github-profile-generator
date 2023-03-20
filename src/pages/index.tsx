@@ -19,19 +19,15 @@ function HomePage() {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <Analytics />
-      <SSRProvider>
-        <ThemeProvider colorMode="night">
-          <InputsProvider>
-            <Box
-              className="flex flex-col md:flex-row min-h-screen p-4"
-              bg={colors.dark.canvas.default}
-            >
-              <Inputs />
-              <MarkdownPreview />
-            </Box>
-          </InputsProvider>
-        </ThemeProvider>
-      </SSRProvider>
+      <InputsProvider>
+        <Box
+          className="flex flex-col md:flex-row min-h-screen p-4"
+          bg={colors.dark.canvas.default}
+        >
+          <Inputs />
+          <MarkdownPreview />
+        </Box>
+      </InputsProvider>
     </>
   );
 }
