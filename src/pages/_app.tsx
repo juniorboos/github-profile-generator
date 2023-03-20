@@ -1,4 +1,5 @@
 import { Box, SSRProvider, ThemeProvider } from "@primer/react";
+import { Analytics } from "@vercel/analytics/react";
 import { MarkdownPreview, Inputs } from "../components";
 import Primitives from "@primer/primitives";
 import { InputsProvider } from "../context/InputsProvider";
@@ -19,6 +20,7 @@ function HomePage() {
           </Box>
         </InputsProvider>
       </ThemeProvider>
+      <Analytics />
     </SSRProvider>
   );
 }
