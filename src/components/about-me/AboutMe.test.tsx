@@ -1,11 +1,9 @@
 import { render, screen, fireEvent } from "../../utils/test";
 import { AboutMe } from "./AboutMe";
 
-import fetch from "node-fetch";
-import { TextDecoder } from "text-encoding";
-
-(globalThis as any).TextDecoder = TextDecoder;
-(globalThis as any).fetch = fetch;
+jest.mock("@emoji-mart/react", () =>
+  jest.fn().mockReturnValue(<div>Mocked Picker</div>)
+);
 
 describe("<AboutMe />", () => {
   beforeEach(() => {
