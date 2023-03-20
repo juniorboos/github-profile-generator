@@ -1,16 +1,15 @@
 # GitHub Profile README Generator
+[Check demo](https://gh-profile-generator.vercel.app/)
 
 This project is a website that has a simple UI where you can input a set of details that you want to include in your README file. Once you're done filling in the inputs, the website generates a markdown that you can copy and paste into your Github profile.
 
 This README generator is a great tool for developers who want to create a professional-looking README file for their Github profile without spending too much time on it. It's easy to use, customizable, and built using modern web technologies.
 
-It's built using the following technologies:
-
 # Tech stack
 
 - React
 - TypeScript
-- Vite
+- Next.js
 - Primer Design System
 - TailwindCSS
 
