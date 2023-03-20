@@ -16,7 +16,7 @@ function HomePage() {
           content="Generate a dynamic GitHub profile with just a few clicks! Add your bio, tech stack, and social links and let our generator do the rest. Show off your skills and impress potential employers with a professional-looking profile."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <Analytics />
       <SSRProvider>
