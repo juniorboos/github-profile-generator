@@ -1,5 +1,5 @@
 import { MultiValue } from "react-select";
-import { SocialMediaProps } from "../components";
+import { SocialMediaProps } from "../context/types";
 import { AboutMeInputProps } from "../hooks";
 import { OptionsProps } from "./markdownBadges";
 

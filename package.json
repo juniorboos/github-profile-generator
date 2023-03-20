@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "build": "tsc && next build",
     "test": "jest --watch"
   },
   "dependencies": {
