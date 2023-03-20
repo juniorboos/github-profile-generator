@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
-export interface EmojiProps {
+interface EmojiProps {
   id: string;
   name: string;
   native: string;
@@ -34,7 +34,7 @@ const EmojiPicker = ({
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [ref]);
+  }, [ref, onClickOutside]);
 
   return (
     <Box className="relative h-auto">
@@ -54,3 +54,4 @@ const EmojiPicker = ({
 };
 
 export { EmojiPicker };
+export type { EmojiProps };

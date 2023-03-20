@@ -4,9 +4,17 @@ import { BiCheck } from "@react-icons/all-files/bi/BiCheck";
 import { BsEye } from "@react-icons/all-files/bs/BsEye";
 import { BsEyeSlash } from "@react-icons/all-files/bs/BsEyeSlash";
 import { useState } from "react";
-import MDEditor from "@uiw/react-md-editor";
 import { useInputs } from "../../context/inputsContext";
 import { getMarkdown } from "../../utils";
+import dynamic from "next/dynamic";
+
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
+
+const MDEditor = dynamic(
+  () => import("@uiw/react-md-editor").then((mod) => mod.default),
+  { ssr: false }
+);
 
 const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);

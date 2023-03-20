@@ -4,7 +4,6 @@ import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline
 import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
 import { Select } from "../index";
 import { useContactMeHandler } from "../../hooks";
-import { SocialMediaProps } from "../../context/types";
 
 const ContactMe = () => {
   const {
@@ -57,4 +56,3 @@ const ContactMe = () => {
 };
 
 export { ContactMe };
-export type { SocialMediaProps };
