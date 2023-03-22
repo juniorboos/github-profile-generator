@@ -33,7 +33,7 @@ ${
         <tr>
           <td>
             <img
-              src="https://github-readme-stats.vercel.app/api?username=${githubUser}&show_icons=true&locale=en&theme=tokyonight"
+              src="https://github-readme-stats.vercel.app/api?username=${githubUser}&show_icons=true&locale=en&theme=tokyonight&count_private=true"
               alt="GitHub Stats"
             />
           </td>
