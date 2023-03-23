@@ -6,6 +6,7 @@ import {
   Droppable,
   OnDragEndResponder,
 } from "react-beautiful-dnd";
+import { MdDragIndicator } from "react-icons/md";
 import { AboutMe, ContactMe, GithubStats, TechStack } from "../index";
 
 //  https://codesandbox.io/s/zqwz5n5p9x
@@ -42,14 +43,16 @@ const Inputs = () => {
               <Draggable key={id} draggableId={id} index={idx}>
                 {(provided) => (
                   <Box
-                    className="flex"
+                    className="flex gap-1"
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                   >
+                    <Box className="h-fit" {...provided.dragHandleProps}>
+                      <MdDragIndicator size={20} />
+                    </Box>
                     <Box className="grow">
                       <Component />
                     </Box>
-                    <Box {...provided.dragHandleProps}>==</Box>
                   </Box>
                 )}
               </Draggable>
