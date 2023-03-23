@@ -17,7 +17,6 @@ const Inputs = () => {
     { id: "contact-me", Component: ContactMe },
   ];
   const [inputs, setInputs] = useState(defaultInputs);
-  console.log(inputs);
 
   const onDragEnd: OnDragEndResponder = (result) => {
     if (!result.destination) {
@@ -41,7 +40,7 @@ const Inputs = () => {
           >
             {inputs.map(({ id, Component }, idx) => (
               <Draggable key={id} draggableId={id} index={idx}>
-                {(provided, snapshot) => (
+                {(provided) => (
                   <Box
                     className="flex"
                     ref={provided.innerRef}
@@ -50,23 +49,13 @@ const Inputs = () => {
                     <Box className="grow">
                       <Component />
                     </Box>
-                    <Box
-                      {...provided.dragHandleProps}
-                      style={{
-                        backgroundColor: snapshot.isDragging
-                          ? "lightblue"
-                          : "white",
-                        ...provided.draggableProps.style,
-                      }}
-                    >
-                      ==
-                    </Box>
+                    <Box {...provided.dragHandleProps}>==</Box>
                   </Box>
                 )}
               </Draggable>
             ))}
 
-            {provided.placeholder}
+            {/* {provided.placeholder} */}
           </Box>
         )}
       </Droppable>
