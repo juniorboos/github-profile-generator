@@ -1,5 +1,4 @@
 import { Box } from "@primer/react";
-import { useState } from "react";
 import {
   DragDropContext,
   Draggable,
@@ -7,6 +6,8 @@ import {
   OnDragEndResponder,
 } from "react-beautiful-dnd";
 import { MdDragIndicator } from "react-icons/md";
+import { useInputs, useInputsDispatch } from "../../context/inputsContext";
+import { InputOrderArray } from "../../context/types";
 import { AboutMe, ContactMe, GithubStats, TechStack } from "../index";
 
 const Inputs = () => {
@@ -16,23 +17,21 @@ const Inputs = () => {
     githubUser: <GithubStats />,
     socials: <ContactMe />,
   };
+  const { inputsOrder } = useInputs();
+  const dispatch = useInputsDispatch();
 
   const getComponent = (input: keyof typeof inputComponents) =>
     inputComponents[input];
-
-  const [inputs, setInputs] = useState(
-    Object.keys(inputComponents) as (keyof typeof inputComponents)[]
-  );
 
   const onDragEnd: OnDragEndResponder = (result) => {
     if (!result.destination) {
       return;
     }
 
-    const newInputs = Array.from(inputs);
+    const newInputs = Array.from(inputsOrder) as InputOrderArray;
     const [removed] = newInputs.splice(result.source.index, 1);
     newInputs.splice(result.destination.index, 0, removed);
-    setInputs(newInputs);
+    dispatch({ type: "SET_INPUTS_ORDER", payload: newInputs });
   };
 
   return (
@@ -44,7 +43,7 @@ const Inputs = () => {
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            {inputs.map((input, idx) => (
+            {inputsOrder.map((input, idx) => (
               <Draggable key={input} draggableId={input} index={idx}>
                 {(provided) => (
                   <Box

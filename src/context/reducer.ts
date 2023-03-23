@@ -47,6 +47,9 @@ export const inputsReducer = (state: State, action: Action) => {
         githubUser: { ...state.githubUser, data: action.payload },
       };
     }
+    case "SET_INPUTS_ORDER": {
+      return { ...state, inputsOrder: action.payload };
+    }
     default: {
       return state;
     }

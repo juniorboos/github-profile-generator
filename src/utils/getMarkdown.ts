@@ -17,7 +17,7 @@ const inputToMarkdown = (input: InputsState[keyof InputsState]) => {
           (singleInput) =>
             singleInput.text && `- ${singleInput.emoji} ${singleInput.text}`
         ).join(`
-        `)}
+`)}
 `;
       break;
     case "tech-stack":

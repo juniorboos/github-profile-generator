@@ -58,4 +58,5 @@ export type Action =
       value: SocialMediaInputProps["socialMedia"];
     }
   | { type: "SET_TECHS"; payload: InputsState["techs"]["data"] }
-  | { type: "SET_GITHUB_USER"; payload: InputsState["githubUser"]["data"] };
+  | { type: "SET_GITHUB_USER"; payload: InputsState["githubUser"]["data"] }
+  | { type: "SET_INPUTS_ORDER"; payload: InputOrderArray };
