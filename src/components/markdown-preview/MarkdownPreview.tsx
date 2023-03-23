@@ -1,8 +1,6 @@
 import { Box, IconButton } from "@primer/react";
-import { BiCopy } from "@react-icons/all-files/bi/BiCopy";
-import { BiCheck } from "@react-icons/all-files/bi/BiCheck";
-import { BsEye } from "@react-icons/all-files/bs/BsEye";
-import { BsEyeSlash } from "@react-icons/all-files/bs/BsEyeSlash";
+import { BiCopy, BiCheck } from "react-icons/bi";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import { useInputs } from "../../context/inputsContext";
 import { getMarkdown } from "../../utils";
