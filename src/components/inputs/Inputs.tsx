@@ -58,7 +58,7 @@ const Inputs = () => {
               </Draggable>
             ))}
 
-            {/* {provided.placeholder} */}
+            {provided.placeholder}
           </Box>
         )}
       </Droppable>
