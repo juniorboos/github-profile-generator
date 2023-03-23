@@ -15,6 +15,7 @@ const TechStack = () => {
       <FormControl.Label>Tech Stack</FormControl.Label>
       <Select
         isMulti
+        instanceId="select-tech-stack"
         placeholder="Choose your techs"
         aria-label="Choose your techs"
         name="markdown-badges"
