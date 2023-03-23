@@ -1,7 +1,6 @@
 import { Box, Button, FormControl, IconButton, TextInput } from "@primer/react";
 import { OptionsProps, socialMedias } from "../../utils";
-import { MdAddCircleOutline } from "@react-icons/all-files/md/MdAddCircleOutline";
-import { MdRemoveCircleOutline } from "@react-icons/all-files/md/MdRemoveCircleOutline";
+import { MdAddCircleOutline, MdRemoveCircleOutline } from "react-icons/md";
 import { Select } from "../index";
 import { useContactMeHandler } from "../../hooks";
 
