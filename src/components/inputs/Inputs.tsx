@@ -24,14 +24,12 @@ const Inputs = () => {
     inputComponents[input];
 
   const onDragEnd: OnDragEndResponder = (result) => {
-    if (!result.destination) {
-      return;
-    }
+    if (!result.destination) return;
 
-    const newInputs = Array.from(inputsOrder) as InputOrderArray;
-    const [removed] = newInputs.splice(result.source.index, 1);
-    newInputs.splice(result.destination.index, 0, removed);
-    dispatch({ type: "SET_INPUTS_ORDER", payload: newInputs });
+    const newInputsOrder = Array.from(inputsOrder) as InputOrderArray;
+    const [removed] = newInputsOrder.splice(result.source.index, 1);
+    newInputsOrder.splice(result.destination.index, 0, removed);
+    dispatch({ type: "SET_INPUTS_ORDER", payload: newInputsOrder });
   };
 
   return (
