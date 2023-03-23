@@ -9,15 +9,20 @@ import {
 import { MdDragIndicator } from "react-icons/md";
 import { AboutMe, ContactMe, GithubStats, TechStack } from "../index";
 
-//  https://codesandbox.io/s/zqwz5n5p9x
 const Inputs = () => {
-  const defaultInputs = [
-    { id: "about-me", Component: AboutMe },
-    { id: "tech-stack", Component: TechStack },
-    { id: "github-stats", Component: GithubStats },
-    { id: "contact-me", Component: ContactMe },
-  ];
-  const [inputs, setInputs] = useState(defaultInputs);
+  const inputComponents = {
+    about: <AboutMe />,
+    techs: <TechStack />,
+    githubUser: <GithubStats />,
+    socials: <ContactMe />,
+  };
+
+  const getComponent = (input: keyof typeof inputComponents) =>
+    inputComponents[input];
+
+  const [inputs, setInputs] = useState(
+    Object.keys(inputComponents) as (keyof typeof inputComponents)[]
+  );
 
   const onDragEnd: OnDragEndResponder = (result) => {
     if (!result.destination) {
@@ -39,8 +44,8 @@ const Inputs = () => {
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            {inputs.map(({ id, Component }, idx) => (
-              <Draggable key={id} draggableId={id} index={idx}>
+            {inputs.map((input, idx) => (
+              <Draggable key={input} draggableId={input} index={idx}>
                 {(provided) => (
                   <Box
                     className="flex gap-1"
@@ -50,9 +55,7 @@ const Inputs = () => {
                     <Box className="h-fit" {...provided.dragHandleProps}>
                       <MdDragIndicator size={20} />
                     </Box>
-                    <Box className="grow">
-                      <Component />
-                    </Box>
+                    <Box className="grow">{getComponent(input)}</Box>
                   </Box>
                 )}
               </Draggable>

@@ -19,7 +19,7 @@ const TechStack = () => {
         aria-label="Choose your techs"
         name="markdown-badges"
         options={markdownBadges}
-        value={techs}
+        value={techs.data}
         onChange={(newValue) => handleOnChange(newValue as OptionsProps[])}
         menuPlacement="auto"
         width="100%"
