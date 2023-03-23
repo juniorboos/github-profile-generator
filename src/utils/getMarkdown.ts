@@ -7,7 +7,8 @@ type TechStack = OptionsProps[];
 type ContactMe = SocialMediaInputProps[];
 
 const inputToMarkdown = (input: InputsState[keyof InputsState]) => {
-  let markdown = `# ${input.title}
+  let markdown = `
+# ${input.title}
 `;
   switch (input.id) {
     case "about-me":
@@ -17,14 +18,14 @@ const inputToMarkdown = (input: InputsState[keyof InputsState]) => {
           (singleInput) =>
             singleInput.text && `- ${singleInput.emoji} ${singleInput.text}`
         ).join(`
-`)}
-`;
+`)}`;
       break;
     case "tech-stack":
       markdown =
         markdown +
-        `${(input.data as TechStack).map((badge) => `${badge.value}`).join(" ")}
-`;
+        `${(input.data as TechStack)
+          .map((badge) => `${badge.value}`)
+          .join(" ")}`;
       break;
     case "github-stats":
       markdown =
@@ -48,8 +49,7 @@ const inputToMarkdown = (input: InputsState[keyof InputsState]) => {
       </td>
     </tr>
   </thead>
-</table>
-`
+</table>`
             : ``
         }`;
       break;
@@ -74,7 +74,6 @@ export const getMarkdown = ({
   inputsOrder,
   ...inputs
 }: State) => `# Hello there 👋
-
 ${inputsOrder?.map((id) => `${inputToMarkdown(inputs[id])}`).join(`
 `)}
 `;
