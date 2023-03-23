@@ -1,45 +1,57 @@
-import { initialInputs } from "./contants";
-import { InputsState, Action } from "./types";
+import { initialState } from "./contants";
+import { State, Action } from "./types";
 
-export const inputsReducer = (inputs: InputsState, action: Action) => {
+export const inputsReducer = (state: State, action: Action) => {
   switch (action.type) {
     case "ADD_INPUT": {
       return {
-        ...inputs,
-        [action.section]: [
-          ...inputs[action.section],
-          initialInputs[action.section][0],
-        ],
+        ...state,
+        [action.section]: {
+          ...state[action.section],
+          data: [
+            ...state[action.section].data,
+            initialState[action.section].data[0],
+          ],
+        },
       };
     }
     case "REMOVE_INPUT": {
-      const list = inputs[action.section].map((obj) => ({ ...obj }));
+      const list = state[action.section].data.map((obj) => ({ ...obj }));
       list.splice(action.idx, 1);
-      return { ...inputs, [action.section]: list };
+      return {
+        ...state,
+        [action.section]: { ...state[action.section], data: list },
+      };
     }
     case "SET_ABOUT_INPUT": {
-      const list = inputs.about.map((obj) => ({ ...obj }));
+      const list = state.about.data.map((obj) => ({ ...obj }));
       list[action.idx][action.field] = action.value;
-      return { ...inputs, about: list };
+      return { ...state, about: { ...state.about, data: list } };
     }
     case "SET_SOCIAL_URL": {
-      const list = inputs.socials.map((obj) => ({ ...obj }));
+      const list = state.socials.data.map((obj) => ({ ...obj }));
       list[action.idx].url = action.value;
-      return { ...inputs, socials: list };
+      return { ...state, socials: { ...state.socials, data: list } };
     }
     case "SET_SOCIAL_MEDIA": {
-      const list = inputs.socials.map((obj) => ({ ...obj }));
+      const list = state.socials.data.map((obj) => ({ ...obj }));
       list[action.idx].socialMedia = action.value;
-      return { ...inputs, socials: list };
+      return { ...state, socials: { ...state.socials, data: list } };
     }
     case "SET_TECHS": {
-      return { ...inputs, techs: action.payload };
+      return { ...state, techs: { ...state.techs, data: action.payload } };
     }
     case "SET_GITHUB_USER": {
-      return { ...inputs, githubUser: action.payload };
+      return {
+        ...state,
+        githubUser: { ...state.githubUser, data: action.payload },
+      };
+    }
+    case "SET_INPUTS_ORDER": {
+      return { ...state, inputsOrder: action.payload };
     }
     default: {
-      return inputs;
+      return state;
     }
   }
 };

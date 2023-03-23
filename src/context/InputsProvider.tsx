@@ -1,5 +1,5 @@
 import { ReactNode, useReducer } from "react";
-import { initialInputs } from "./contants";
+import { initialState } from "./contants";
 import { InputsContext, InputsDispatchContext } from "./inputsContext";
 import { inputsReducer } from "./reducer";
 
@@ -8,10 +8,10 @@ interface InputsProviderProps {
 }
 
 export const InputsProvider = ({ children }: InputsProviderProps) => {
-  const [inputs, dispatch] = useReducer(inputsReducer, initialInputs);
+  const [state, dispatch] = useReducer(inputsReducer, initialState);
 
   return (
-    <InputsContext.Provider value={inputs}>
+    <InputsContext.Provider value={state}>
       <InputsDispatchContext.Provider value={dispatch}>
         {children}
       </InputsDispatchContext.Provider>

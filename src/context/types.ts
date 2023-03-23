@@ -6,16 +6,36 @@ export interface AboutMeInputProps {
   emoji: string;
 }
 
-export interface SocialMediaProps {
+export interface SocialMediaInputProps {
   url: string;
   socialMedia?: SingleValue<OptionsProps>;
 }
 
+interface InputGroup<T> {
+  title: string;
+  id: string;
+  data: T;
+}
+
 export interface InputsState {
-  about: AboutMeInputProps[];
-  techs: OptionsProps[];
-  githubUser: string;
-  socials: SocialMediaProps[];
+  about: InputGroup<AboutMeInputProps[]>;
+  techs: InputGroup<OptionsProps[]>;
+  githubUser: InputGroup<string>;
+  socials: InputGroup<SocialMediaInputProps[]>;
+}
+
+type InputsStateKeys = keyof InputsState;
+
+type Permute<T, U = T> = [T] extends [never] // If T is an empty tuple
+  ? [] // Return an empty tuple
+  : U extends any // Otherwise, if U can be any type
+  ? [U, ...Permute<Exclude<T, U>>] // Add U to the front of each permutation of T without U
+  : never; // If U can't be any type, return never
+
+export type InputOrderArray = Permute<InputsStateKeys>;
+
+export interface State extends InputsState {
+  inputsOrder: InputOrderArray;
 }
 
 export type Action =
@@ -30,12 +50,13 @@ export type Action =
   | {
       type: "SET_SOCIAL_URL";
       idx: number;
-      value: SocialMediaProps["url"];
+      value: SocialMediaInputProps["url"];
     }
   | {
       type: "SET_SOCIAL_MEDIA";
       idx: number;
-      value: SocialMediaProps["socialMedia"];
+      value: SocialMediaInputProps["socialMedia"];
     }
-  | { type: "SET_TECHS"; payload: InputsState["techs"] }
-  | { type: "SET_GITHUB_USER"; payload: InputsState["githubUser"] };
+  | { type: "SET_TECHS"; payload: InputsState["techs"]["data"] }
+  | { type: "SET_GITHUB_USER"; payload: InputsState["githubUser"]["data"] }
+  | { type: "SET_INPUTS_ORDER"; payload: InputOrderArray };

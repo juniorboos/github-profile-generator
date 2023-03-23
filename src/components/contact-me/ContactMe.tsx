@@ -25,6 +25,7 @@ const ContactMe = () => {
             className="flex-grow"
           />
           <Select
+            instanceId="select-social-media"
             options={socialMedias}
             aria-label="Select social media"
             value={singleInput.socialMedia}

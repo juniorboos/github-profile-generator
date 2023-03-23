@@ -1,8 +1,8 @@
 import { createContext, useContext, Dispatch } from "react";
-import { initialInputs } from "./contants";
-import { InputsState, Action } from "./types";
+import { initialState } from "./contants";
+import { Action, State } from "./types";
 
-export const InputsContext = createContext<InputsState>(initialInputs);
+export const InputsContext = createContext<State>(initialState);
 export const InputsDispatchContext = createContext<Dispatch<Action>>(() => {});
 
 export const useInputs = () => useContext(InputsContext);

@@ -16,7 +16,9 @@ interface AboutMeHandlerProps {
 }
 
 const useAboutMeHandler = (): AboutMeHandlerProps => {
-  const { about } = useInputs();
+  const {
+    about: { data },
+  } = useInputs();
 
   const dispatch = useInputsDispatch();
   const [isEmojisShown, setIsEmojisShown] = useState<null | number>(null);
@@ -39,7 +41,7 @@ const useAboutMeHandler = (): AboutMeHandlerProps => {
     dispatch({ type: "ADD_INPUT", section: "about" });
 
   return {
-    about,
+    about: data,
     isEmojisShown,
     handleShowEmojis,
     handleOnChange,

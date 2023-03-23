@@ -1,9 +1,9 @@
 import { useInputs, useInputsDispatch } from "../context/inputsContext";
-import { SocialMediaProps } from "../context/types";
+import { SocialMediaInputProps } from "../context/types";
 import { OptionsProps } from "../utils";
 
 interface ContactMeHandlerProps {
-  socials: SocialMediaProps[];
+  socials: SocialMediaInputProps[];
   handleOnChangeUrl: (value: string, idx: number) => void;
   handleOnChangeSocialMedia: (value: OptionsProps, idx: number) => void;
   handleRemoveInput: (idx: number) => void;
@@ -11,7 +11,9 @@ interface ContactMeHandlerProps {
 }
 
 const useContactMeHandler = (): ContactMeHandlerProps => {
-  const { socials } = useInputs();
+  const {
+    socials: { data },
+  } = useInputs();
   const dispatch = useInputsDispatch();
 
   const handleOnChangeUrl = (value: string, idx: number) =>
@@ -27,7 +29,7 @@ const useContactMeHandler = (): ContactMeHandlerProps => {
     dispatch({ type: "ADD_INPUT", section: "socials" });
 
   return {
-    socials,
+    socials: data,
     handleOnChangeUrl,
     handleOnChangeSocialMedia,
     handleRemoveInput,

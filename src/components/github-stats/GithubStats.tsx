@@ -14,7 +14,7 @@ const GithubStats = () => {
       <FormControl.Label>Github User</FormControl.Label>
       <TextInput
         placeholder="Username"
-        value={githubUser}
+        value={githubUser.data}
         onChange={handleOnChange}
         block
       />

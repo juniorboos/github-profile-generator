@@ -17,9 +17,9 @@ const MDEditor = dynamic(
 const MarkdownPreview = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState(false);
-  const { about, techs, githubUser, socials } = useInputs();
+  const state = useInputs();
 
-  const markdown = getMarkdown(about, techs, githubUser, socials);
+  const markdown = getMarkdown(state);
 
   const handleClick = () => {
     setIsClicked(true);
