@@ -39,6 +39,10 @@ const Select = ({ width, ...props }: SelectProps) => {
           ...base,
           background: "transparent",
           borderColor: colors.dark.border.default,
+          cursor: "text",
+          ":hover": {
+            borderColor: colors.dark.border.default,
+          },
         }),
         input: (base) => ({ ...base, color: colors.dark.fg.default }),
         singleValue: (base) => ({ ...base, color: colors.dark.fg.default }),
@@ -46,7 +50,7 @@ const Select = ({ width, ...props }: SelectProps) => {
           ...styles,
           backgroundColor: colors.dark.accent.emphasis,
         }),
-
+        indicatorsContainer: (base) => ({ ...base, cursor: "pointer" }),
         multiValueLabel: (styles) => ({
           ...styles,
           color: colors.dark.fg.onEmphasis,
