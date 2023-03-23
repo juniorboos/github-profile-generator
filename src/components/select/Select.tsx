@@ -20,7 +20,10 @@ interface CustomOptionProps extends OptionProps {
 const CustomOption = ({ children, ...props }: CustomOptionProps) => {
   const { onMouseMove, onMouseOver, ...rest } = props;
   return (
-    <components.Option {...rest} className="hover:bg-blue-100 focus:bg-none">
+    <components.Option
+      {...rest}
+      className="hover:bg-blue-100 focus:bg-none text-black"
+    >
       {children}
     </components.Option>
   );
@@ -39,6 +42,22 @@ const Select = ({ width, ...props }: SelectProps) => {
         }),
         input: (base) => ({ ...base, color: colors.dark.fg.default }),
         singleValue: (base) => ({ ...base, color: colors.dark.fg.default }),
+        multiValue: (styles) => ({
+          ...styles,
+          backgroundColor: colors.dark.accent.emphasis,
+        }),
+
+        multiValueLabel: (styles) => ({
+          ...styles,
+          color: colors.dark.fg.onEmphasis,
+        }),
+        multiValueRemove: (styles) => ({
+          ...styles,
+          color: colors.dark.fg.onEmphasis,
+          ":hover": {
+            backgroundColor: colors.dark.accent.fg,
+          },
+        }),
       }}
       className="text-sm"
       filterOption={createFilter({ ignoreAccents: false })}
