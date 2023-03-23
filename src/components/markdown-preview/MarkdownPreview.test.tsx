@@ -1,8 +1,9 @@
+import { initialState } from "../../context/contants";
 import { getMarkdown } from "../../utils";
 import { render, fireEvent } from "../../utils/test";
 import { MarkdownPreview } from "./MarkdownPreview";
 
-const markdown = getMarkdown([], [], "", []);
+const markdown = getMarkdown(initialState);
 
 describe("<MarkdownPreview />", () => {
   // TODO: Fix this test as it's not waiting for the component to render
