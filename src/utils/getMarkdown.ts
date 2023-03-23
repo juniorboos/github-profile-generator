@@ -75,5 +75,4 @@ export const getMarkdown = ({
   ...inputs
 }: State) => `# Hello there 👋
 ${inputsOrder?.map((id) => `${inputToMarkdown(inputs[id])}`).join(`
-`)}
-`;
+`)}`;
