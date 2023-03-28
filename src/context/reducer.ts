@@ -3,6 +3,9 @@ import { State, Action } from "./types";
 
 export const inputsReducer = (state: State, action: Action) => {
   switch (action.type) {
+    case "SET_STORE": {
+      return action.payload;
+    }
     case "ADD_INPUT": {
       return {
         ...state,

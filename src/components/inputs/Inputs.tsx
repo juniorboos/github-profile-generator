@@ -49,7 +49,11 @@ const Inputs = () => {
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                   >
-                    <Box className="h-fit" {...provided.dragHandleProps}>
+                    <Box
+                      className="h-fit"
+                      aria-label={`Draggable handle for ${input} input`}
+                      {...provided.dragHandleProps}
+                    >
                       <MdDragIndicator size={20} />
                     </Box>
                     <Box className="grow">{getComponent(input)}</Box>

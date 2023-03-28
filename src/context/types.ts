@@ -39,6 +39,7 @@ export interface State extends InputsState {
 }
 
 export type Action =
+  | { type: "SET_STORE"; payload: State }
   | { type: "ADD_INPUT"; section: "about" | "socials" }
   | { type: "REMOVE_INPUT"; section: "about" | "socials"; idx: number }
   | {
