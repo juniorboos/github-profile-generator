@@ -18,3 +18,5 @@ export const initialState: State = {
   },
   inputsOrder: ["about", "techs", "githubUser", "socials"],
 };
+
+export const localStorageKey = "gh-profile-generator";
