@@ -37,7 +37,7 @@ const Inputs = () => {
       <Droppable droppableId="droppable">
         {(provided) => (
           <Box
-            className="flex p-4 flex-col gap-4 md:min-w-[500px]"
+            className="flex p-4 flex-col gap-4 md:w-[500px]"
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
