@@ -11,21 +11,21 @@ const TechStack = () => {
     dispatch({ type: "SET_TECHS", payload: newValue });
 
   return (
-    <FormControl>
-      <FormControl.Label>Tech Stack</FormControl.Label>
-      <Select
-        isMulti
-        instanceId="select-tech-stack"
-        placeholder="Choose your techs"
-        aria-label="Choose your techs"
-        name="markdown-badges"
-        options={markdownBadges}
-        value={techs.data}
-        onChange={(newValue) => handleOnChange(newValue as OptionsProps[])}
-        menuPlacement="auto"
-        width="100%"
-      />
-    </FormControl>
+		<FormControl>
+			<FormControl.Label>Tech Stack</FormControl.Label>
+			<Select
+				isMulti
+				instanceId="select-tech-stack"
+				placeholder="Choose your techs"
+				aria-label="Choose your techs"
+				name="markdown-badges"
+				options={markdownBadges.sort((a, b) => a.label.localeCompare(b.label))}
+				value={techs.data}
+				onChange={(newValue) => handleOnChange(newValue as OptionsProps[])}
+				menuPlacement="auto"
+				width="100%"
+			/>
+		</FormControl>
   );
 };
 

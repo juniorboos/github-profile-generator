@@ -26,7 +26,7 @@ const ContactMe = () => {
           />
           <Select
             instanceId="select-social-media"
-            options={socialMedias}
+            options={socialMedias.sort((a, b) => a.label.localeCompare(b.label))}
             aria-label="Select social media"
             value={singleInput.socialMedia}
             onChange={(e) => handleOnChangeSocialMedia(e as OptionsProps, idx)}
