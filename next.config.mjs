@@ -10,6 +10,16 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/gh-profile-generator/_next/:path+",
+          destination: "/_next/:path+",
+        },
+      ],
+    };
+  },
 };
 
 export default removeImports({})(nextConfig);
