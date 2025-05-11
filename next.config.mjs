@@ -1,7 +1,5 @@
 import removeImports from "next-remove-imports";
 
-const isProd = process.env.NODE_ENV === "production";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   assetPrefix: "/gh-profile-generator",
