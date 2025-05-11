@@ -10,17 +10,6 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  basePath: "/gh-profile-generator",
-  async redirects() {
-    return [
-      {
-        source: "/",
-        basePath: false,
-        destination: "https://miltonj.dev/gh-profile-generator",
-        permanent: true,
-      },
-    ];
-  },
   async rewrites() {
     return {
       beforeFiles: [
