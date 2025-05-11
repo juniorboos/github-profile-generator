@@ -5,6 +5,7 @@ import ReactSelect, {
 } from "react-select";
 import Primitives from "@primer/primitives";
 import { ComponentProps } from "react";
+import { OptionsProps } from "../../utils";
 const { colors } = Primitives;
 
 export interface SelectProps extends ComponentProps<ReactSelect> {
@@ -32,6 +33,7 @@ const CustomOption = ({ children, ...props }: CustomOptionProps) => {
 const Select = ({ width, ...props }: SelectProps) => {
   return (
     <ReactSelect
+      getOptionValue={(option) => (option as OptionsProps).label}
       {...props}
       styles={{
         container: (base) => ({ ...base, width: width ?? "auto" }),

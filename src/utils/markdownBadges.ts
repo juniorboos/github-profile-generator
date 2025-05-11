@@ -184,7 +184,7 @@ export const socialMedias: OptionsProps[] = [
     value:
       "![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)",
   },
-];
+].sort((a, b) => a.label.localeCompare(b.label));
 
 export const markdownBadges: OptionsProps[] = [
   {
@@ -2908,4 +2908,4 @@ export const markdownBadges: OptionsProps[] = [
       "![Upwork](https://img.shields.io/badge/UpWork-6FDA44?style=for-the-badge&logo=Upwork&logoColor=white)",
   },
   ...socialMedias,
-];
+].sort((a, b) => a.label.localeCompare(b.label));
